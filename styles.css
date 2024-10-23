@@ -189,7 +189,16 @@ nav a{
     margin-left: 17px;
 }
 
-h2{
+.tecnologies h2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 45px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.about_I h2{
     display: flex;
     justify-content: left;
     align-items: center;
@@ -277,16 +286,24 @@ width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
+
 }
 
-.about_I p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 50px;
-    font-size: 22px;
-    color: var(--text-color);
+.about_I .text-container {
+    width: 1300px;
+    overflow: hidden;
+    text-align: justify;
+    padding: 5px;
 }
+
+.about_I .text-container p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.5;
+}
+
 
 .images_redes svg, .images_redes img {
     width: 50px;
@@ -308,10 +325,6 @@ width: 200px;
     display: flex;
     gap: 20px; 
     position: relative; 
-}
-
-.imagen_grid{
-    margin-top: 8px;
 }
 
 .redes {
@@ -352,6 +365,10 @@ width: 200px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.tecnologies h2{
+    margin-bottom: 5px;
 }
 
 .container_tecnologies {
@@ -425,7 +442,7 @@ width: 200px;
     text-align: center;
     font-size: 45px;
     color: var(--text-color);
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .projects-container {
@@ -446,9 +463,9 @@ width: 200px;
     align-items: center;
     position: relative;
     max-width: 400px;
-    box-shadow: 1px 1px 30px 1px var(--grid-shadow);
+    box-shadow: 1px 1px 10px 2px var(--grid-shadow);
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     border-radius: 10px;
     overflow: hidden;
@@ -485,22 +502,142 @@ width: 200px;
     margin-top: 0px;
 }
 
-.tecnologies_uses{
-    display: flex;
+.tecnologies-container {
+    display: flex;         /* Activa flexbox */
     justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 30px;
+    align-items: center;   /* Alinea los elementos al centro horizontalmente */
+    gap: 20px;            /* Espacio entre "Looker Studio" y "Google Sheets" */
+    margin-top: 3px;     /* Espacio superior para separar del h2 */
 }
 
+.tecnologies_uses {
+    padding: 1px;
+    text-align: center; /* Alinea los textos de tecnologías al centro */
+}
+
+.info_dashboard1 {
+    font-size: 25px !important; /* Cambia este valor al tamaño que desees */
+}
 .tecnologies_uses p {
+    margin: 5px 0; /* Espacio entre los párrafos */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente para los textos */
+}
+.dashboard-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .dashboard-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .projects-container {
+    position: relative;
+}
+
+.media-container {
+    position: relative;
+    width: 2500px;
+    height: 1407px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.media-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.media-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+
+}
+
+.media-container:hover video {
+    opacity: 1;
+}
+
+.media-container:hover img {
+    opacity: 0;
+}
+
+.video_grid{
+    cursor: pointer;
+}
+
+.media-container a {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+.looker_studio{
     position: relative; 
-    top: -25px;
-    border: 2px solid rgb(255, 0, 0);
-    padding: 5px;
-    border-radius: 2px;
+    top: 5px;
+    border: 2px solid rgb(0, 153, 255);
+    background-color: rgba(0, 153, 255, 0.349);
+    padding: 3px 6px;
+    border-radius: 5px;
     display: inline-block;
-    
+    color: var(--text-color);
+}
+
+.gsheets{
+    position: relative; 
+    top: 5px;
+    border: 2px solid rgb(27, 161, 38);
+    background-color: rgba(27, 161, 38, 0.356);
+    padding: 3px 6px;
+    border-radius: 5px;
+    display: inline-block;
+    color: var(--text-color);
+}
+
+.info{
+    text-align: justify;
+    color: var(--text-color);
+    top: 5px;
+}
+
+.ir_web{
+    position: relative;
+    width: 30%;
+    background-color: var(--color-primario);
+    text-decoration: none;
+    color: white;
+    margin-left: 270px;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    top: 10px;
+}
+
+.ver_mas:hover {
+    background-color: rgb(81, 59, 134); 
+    color: var(--text-button);
 }
 
 .footer{

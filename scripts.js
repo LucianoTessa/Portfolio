@@ -59,3 +59,11 @@ window.addEventListener('DOMContentLoaded', () => {
         darkModeToggle.style.display = 'inline-block';
     });
 });
+
+
+const video = document.getElementById('dashboard-1');
+
+        video.addEventListener('mouseenter', () => {
+            video.currentTime = 0; // Reinicia el video al principio
+            video.play();          // Reproduce el video
+        });
