@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
 
+
 :root{
     --color-primario: rgb(113, 85, 185);
     --background: rgb(255, 255, 255);
@@ -159,7 +160,6 @@ nav a{
     color: var(--text-button);
 }
 
-
 .container_mode {
     display: flex;
     justify-content: center; 
@@ -214,7 +214,6 @@ nav a{
     gap: 450px;
     min-height: calc(100vh - 80px);
 }
-
 
 .text_content {
     flex: 1;
@@ -442,7 +441,7 @@ width: 200px;
     text-align: center;
     font-size: 45px;
     color: var(--text-color);
-    margin-bottom: 5px;
+    margin-bottom: 45px;
 }
 
 .projects-container {
@@ -503,24 +502,29 @@ width: 200px;
 }
 
 .tecnologies-container {
-    display: flex;         /* Activa flexbox */
+    position: relative;
+    display: flex;
     justify-content: center;
-    align-items: center;   /* Alinea los elementos al centro horizontalmente */
-    gap: 20px;            /* Espacio entre "Looker Studio" y "Google Sheets" */
-    margin-top: 3px;     /* Espacio superior para separar del h2 */
+    align-items: center;
+    gap: 20px;
+    right: 65px;
 }
 
 .tecnologies_uses {
     padding: 1px;
-    text-align: center; /* Alinea los textos de tecnologías al centro */
+    text-align: center;
 }
 
 .info_dashboard1 {
-    font-size: 25px !important; /* Cambia este valor al tamaño que desees */
+    font-family: "Oswald", sans-serif;
+    font-size: 25px !important;
+    margin-top: 10px;
+    margin-right: 35px;
+    
 }
 .tecnologies_uses p {
-    margin: 5px 0; /* Espacio entre los párrafos */
-    font-size: 1rem; /* Ajusta el tamaño de la fuente para los textos */
+    margin: 5px 0;
+    font-size: 1rem;
 }
 .dashboard-container {
     position: relative;
@@ -622,22 +626,78 @@ width: 200px;
     top: 5px;
 }
 
-.ir_web{
+.ir_web {
     position: relative;
     width: 30%;
     background-color: var(--color-primario);
     text-decoration: none;
     color: white;
-    margin-left: 270px;
     padding: 5px;
     border-radius: 5px;
     display: inline-block;
-    top: 10px;
+    margin-top: 20px;
+    margin-right: 250px;
+    text-align: center;
 }
 
 .ver_mas:hover {
     background-color: rgb(81, 59, 134); 
     color: var(--text-button);
+}
+
+#contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 150px;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#contact-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#contact-form button:hover {
+    background-color: #0056b3;
 }
 
 .footer{
