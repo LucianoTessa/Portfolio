@@ -504,10 +504,11 @@ width: 200px;
 .tecnologies-container {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 20px;
-    right: 65px;
+    right: 62px;
+    margin-left: 60px;
 }
 
 .tecnologies_uses {
@@ -522,6 +523,15 @@ width: 200px;
     margin-right: 35px;
     
 }
+
+.info_dashboard2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 25px !important;
+    margin-top: 10px;
+    margin-right: 105px;
+    
+}
+
 .tecnologies_uses p {
     margin: 5px 0;
     font-size: 1rem;
