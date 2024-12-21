@@ -528,7 +528,7 @@ width: 200px;
     font-family: "Oswald", sans-serif;
     font-size: 25px !important;
     margin-top: 10px;
-    margin-right: 75px;
+    margin-right: 78px;
 }
 
 .info_dashboard3 {
@@ -536,6 +536,13 @@ width: 200px;
     font-size: 25px !important;
     margin-top: 10px;
     margin-right: 155px;
+}
+
+.info_dashboard4 {
+    font-family: "Oswald", sans-serif;
+    font-size: 25px !important;
+    margin-top: 10px;
+    margin-right: 150px;
 }
 
 .tecnologies_uses p {
