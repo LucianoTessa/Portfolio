@@ -218,7 +218,13 @@ iframe {
     margin: 0 auto;
     text-align: justify;
     padding: 20px;
+    font-size: 20px;
 }
+
+.text-container p{
+    margin-top: 20px;
+}
+
 
 .footer{
     display: flex;
