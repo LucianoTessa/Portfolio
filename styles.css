@@ -545,6 +545,13 @@ width: 200px;
     margin-right: 150px;
 }
 
+.info_dashboard5 {
+    font-family: "Oswald", sans-serif;
+    font-size: 25px !important;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
 .tecnologies_uses p {
     margin: 5px 0;
     font-size: 1rem;
