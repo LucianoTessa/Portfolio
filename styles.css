@@ -552,6 +552,14 @@ width: 200px;
     margin-right: 10px;
 }
 
+
+.info_dashboard6 {
+    font-family: "Oswald", sans-serif;
+    font-size: 25px !important;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
 .tecnologies_uses p {
     margin: 5px 0;
     font-size: 1rem;
@@ -656,18 +664,26 @@ width: 200px;
     top: 5px;
 }
 
-.ir_web {
-    position: relative;
-    width: 30%;
+.buttons-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones dentro del contenedor */
+    margin-top: 20px;
+    margin-right: 160px;
+}
+
+.ir_web,
+.ver_informe {
+    width: auto; /* Ajusta automáticamente el tamaño según el contenido */
     background-color: var(--color-primario);
     text-decoration: none;
     color: white;
-    padding: 5px;
+    padding: 8px 16px;
     border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 250px;
     text-align: center;
+    display: inline-block;
+    font-size: 14px; /* Tamaño de fuente ajustable */
+    
 }
 
 .ver_mas:hover {
