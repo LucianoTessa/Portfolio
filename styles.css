@@ -763,7 +763,7 @@ nav a {
   }
 
   .menu-item {
-    display: block; /* Apilar los elementos del menú */
+    display: block;
     padding: 10px 0;
   }
 
@@ -771,14 +771,66 @@ nav a {
     text-decoration: none;
     font-size: 2.5rem;
     color: var(--text-color);
-    margin-right: 320px;
   }
 
-  .header {
+  .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin-left: 50px;
+  }
+
+  .nav_list {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .nav_list a {
+    font-size: 1rem;
+  }
+
+  .mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    background-color: var(--mode-button);
+    border-radius: 5px;
+  }
+
+  .cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-button);
+    font-size: 15px;
+    background-color: var(--color-primario);
+    height: 36px;
+    width: 130px;
+    border-radius: 5px;
+    padding: 0vh 0vw;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    box-shadow: 3px 1px 5px rgb(17, 17, 17);
+    padding: 0px 0px;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 10vh;
   }
 
   .about_I .text-container {
