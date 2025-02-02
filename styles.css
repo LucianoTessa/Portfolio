@@ -124,7 +124,7 @@
 }
 
 .main_info p {
-  font-size: 22px;
+  font-size: 20px;
   margin-top: 20px;
 }
 
@@ -643,7 +643,7 @@
     height: 100vh;
     width: 40%;
     background-color: var(--nav-color);
-    transition: right 2s;
+    transition: right 1s;
   }
 
   .nav_container {
@@ -753,7 +753,7 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 0 20px 20px;
   }
 
   .text_content {
@@ -848,7 +848,7 @@
     height: 100vh;
     width: 40%;
     background-color: var(--nav-color);
-    transition: right 2s;
+    transition: right 1s;
   }
 
   .nav_container {
@@ -1034,7 +1034,7 @@
       height: 100vh;
       width: 40%;
       background-color: var(--nav-color);
-      transition: right 2s;
+      transition: right 1s;
     }
 
     .nav_container {
