@@ -93,9 +93,13 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const buttonNav = document.querySelector("#button_nav");
+  const buttonNav2 = document.querySelector("#button_nav2");
   const navBar = document.querySelector(".nav_list_mobile");
   buttonNav.addEventListener("click", () => {
     navBar.classList.add("visible");
+  });
+  buttonNav2.addEventListener("click", () => {
+    navBar.classList.remove("visible");
   });
 });
 
