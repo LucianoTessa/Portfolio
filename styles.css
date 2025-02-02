@@ -725,7 +725,7 @@
     font-size: 10px;
     overflow: hidden;
     text-align: justify;
-    padding: 20px;
+    padding: 10px;
   }
 
   .about_I .text-container p {
@@ -735,6 +735,7 @@
     margin: 0;
     line-height: 1.5;
     width: 100%;
+    padding: 0px;
   }
 
   .tecnologies h2 {
@@ -810,7 +811,7 @@
 
   .info_dashboard1 {
     font-family: "Oswald", sans-serif;
-    font-size: 22px !important;
+    font-size: 20px !important;
     margin-top: 10px;
     margin-right: 0px;
     color: var(--text-color);
@@ -818,7 +819,7 @@
 
   .info_dashboard2 {
     font-family: "Oswald", sans-serif;
-    font-size: 23px !important;
+    font-size: 20px !important;
     margin-top: 10px;
     margin-right: 0px;
     color: var(--text-color);
@@ -826,7 +827,7 @@
 
   .info_dashboard3 {
     font-family: "Oswald", sans-serif;
-    font-size: 23px !important;
+    font-size: 20px !important;
     margin-top: 10px;
     margin-right: 0px;
     color: var(--text-color);
@@ -834,14 +835,14 @@
 
   .info_dashboard4 {
     font-family: "Oswald", sans-serif;
-    font-size: 25px !important;
+    font-size: 20px !important;
     margin-right: 0px;
     color: var(--text-color);
   }
 
   .info_dashboard5 {
     font-family: "Oswald", sans-serif;
-    font-size: 21px !important;
+    font-size: 20px !important;
     margin-top: 10px;
     margin-right: 0px;
     color: var(--text-color);
@@ -849,7 +850,7 @@
 
   .info_dashboard6 {
     font-family: "Oswald", sans-serif;
-    font-size: 23px !important;
+    font-size: 20px !important;
     margin-top: 10px;
     margin-right: 0px;
     color: var(--text-color);
