@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -40,9 +41,10 @@ html {
 
 body {
   width: 100%;
-  min-width: 100vh;
+  min-height: 100vh;
   background-color: var(--background);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -65,7 +67,7 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 5%;
   box-shadow: 3px 1px 5px rgb(17, 17, 17);
@@ -75,17 +77,7 @@ header {
   top: 0;
   z-index: 1000;
   height: 10vh;
-}
-
-header nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-header nav ul li {
-  display: flex;
-  margin-right: 20px;
+  padding: 0 10%;
 }
 
 header nav a {
@@ -117,7 +109,6 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 3vw;
-  margin-left: 20%;
   height: 100%;
 }
 
@@ -138,6 +129,10 @@ nav button {
 
 nav a {
   text-decoration: none;
+}
+
+.nav_mobile {
+  display: none;
 }
 
 .cv {
@@ -161,7 +156,6 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .mode {
@@ -208,8 +202,10 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 450px;
   min-height: calc(100vh - 80px);
+  gap: 5em;
+  width: 100%;
+  padding: 0 17%;
 }
 
 .text_content {
@@ -244,7 +240,6 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 200px;
 }
 
 .main_info p {
@@ -282,7 +277,7 @@ nav a {
 }
 
 .about_I .text-container {
-  width: 1300px;
+  max-width: 1300px;
   overflow: hidden;
   text-align: justify;
   padding: 5px;
@@ -366,11 +361,11 @@ nav a {
 
 .container_tecnologies {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   gap: 35px;
-  width: 800px;
-  height: 80px;
+  padding: 20px;
   background-color: var(--container-tecnologies);
   display: flex;
   justify-content: center;
@@ -391,13 +386,6 @@ nav a {
 
 .container_tecnologies img:hover {
   transform: scale(1.6);
-}
-
-.container_tecnologies {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .logo-item {
@@ -452,7 +440,7 @@ nav a {
 .grid-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   position: relative;
   max-width: 400px;
   box-shadow: 1px 1px 10px 2px var(--grid-shadow);
@@ -494,13 +482,9 @@ nav a {
 }
 
 .tecnologies-container {
-  position: relative;
   display: flex;
-  justify-content: left;
   align-items: center;
   gap: 20px;
-  right: 62px;
-  margin-left: 60px;
 }
 
 .tecnologies_uses {
@@ -572,7 +556,6 @@ nav a {
 
 .media-container {
   position: relative;
-  width: 2500px;
   height: 1407px;
   width: 100%;
   height: 0;
@@ -658,7 +641,6 @@ nav a {
   gap: 10px; /* Espacio entre los botones */
   justify-content: center; /* Centra los botones dentro del contenedor */
   margin-top: 20px;
-  margin-right: 160px;
 }
 
 .ir_web,
@@ -753,17 +735,9 @@ nav a {
     grid-template-columns: 1fr;
   }
 
-  .grid-item {
-    width: 100%;
-  }
-
   img {
     width: 100%;
     height: auto;
-  }
-
-  .text_content {
-    width: 100%;
   }
 
   .menu-item {
@@ -778,12 +752,11 @@ nav a {
   }
 
   .nav {
+    display: none;
+  }
+
+  .nav_mobile {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 0;
-    margin-left: 50px;
   }
 
   .nav_list {
@@ -792,6 +765,31 @@ nav a {
     justify-content: space-between;
     align-items: center;
     gap: 0px;
+  }
+
+  .nav_list_mobile{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 40%;
+    background-color: red;
+  }
+
+  .nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5em;
+  }
+
+  .nav_list_mobile.visible {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 
   .nav_list a {
@@ -825,11 +823,11 @@ nav a {
 
   header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 5%;
     box-shadow: 3px 1px 5px rgb(17, 17, 17);
-    padding: 0px 0px;
+    padding: 0px 2em;
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -889,14 +887,13 @@ nav a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
   }
 
   .image_content {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1rem;
     margin-left: 0px;
     width: 80%;
   }
@@ -911,8 +908,8 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40rem;
     gap: 32px;
+    margin: 0 2em;
   }
 
   .container_tecnologies img {
@@ -930,4 +927,45 @@ nav a {
   .tecnologies {
     margin-top: 50px;
   }
+}
+
+@media (min-width: 761px) and (max-width: 1080px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav_mobile {
+    display: flex;
+  }
+
+  .nav_list_mobile{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 40%;
+    background-color: red;
+  }
+
+  .nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5em;
+  }
+
+  .nav_list_mobile.visible {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
 }
