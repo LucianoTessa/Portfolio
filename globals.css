@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
+
+:root {
+  --color-primario: rgb(113, 85, 185);
+  --nav-color: rgb(92, 83, 114);
+  --background: rgb(255, 255, 255);
+  --text-color: rgb(29, 26, 32);
+  --text-button: rgb(255, 255, 255);
+  --mode-button: rgb(204, 204, 204);
+  --container-tecnologies: rgb(255, 255, 255);
+  --grid-container: rgb(255, 255, 255);
+  --footer: rgb(255, 255, 255);
+  --tooltip: rgb(113, 85, 185);
+  --tooltip-text: rgb(255, 255, 255);
+  --grid-shadow: rgb(78, 78, 78);
+}
+.dark {
+  --color-primario: rgb(113, 85, 185);
+  --nav-color: rgb(22, 13, 41);
+  --background: rgb(37, 33, 41);
+  --text-color: white;
+  --text-button: rgb(255, 255, 255);
+  --mode-button: rgb(44, 42, 49);
+  --container-tecnologies: rgb(113, 85, 185);
+  --grid-container: rgb(51, 42, 59);
+  --footer: rgb(113, 85, 185);
+  --tooltip: rgb(51, 42, 59);
+  --tooltip-text: rgb(255, 255, 255);
+  --grid-shadow: rgb(0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Afacad Flux", sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(210, 193, 255);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(113, 85, 185);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(142, 116, 206);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+  box-shadow: 3px 1px 5px rgb(17, 17, 17);
+  padding: 0px 25px;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 10vh;
+  padding: 0 10%;
+}
+
+header nav a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--color-primario);
+}
+
+h1 a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: right;
+  padding: 0%;
+  gap: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  height: 100%;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+nav button {
+  padding: 1vh 2vw;
+  background-color: var(--color-primario);
+  border-radius: 5px;
+  border-color: var(--color-primario);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.nav_mobile {
+  display: none;
+}
+
+.cv {
+  color: var(--text-button);
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: var(--color-primario);
+  padding: 1vh 2vw;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cv:hover {
+  background-color: rgb(81, 59, 134);
+  color: var(--text-button);
+}
+
+.container_mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
+  width: 55px;
+  background-color: var(--mode-button);
+  border-radius: 5px;
+}
+
+.mode:hover {
+  filter: brightness(2);
+  --mode-button: rgb(77, 77, 77);
+}
+
+.mode1 {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-left: 17px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  box-shadow: 3px -3px 5px rgb(17, 17, 17);
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 14px;
+  }
+  h1 a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: var(--text-color);
+  }
+}
