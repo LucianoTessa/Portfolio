@@ -500,7 +500,7 @@
   position: relative;
   top: 5px;
   border: 2px solid rgb(255, 238, 0);
-  background-color: rgb(214, 200, 0);
+  background-color: rgba(214, 200, 0, 0.613);
   padding: 3px 6px;
   border-radius: 5px;
   display: inline-block;
@@ -511,7 +511,7 @@
   position: relative;
   top: 5px;
   border: 2px solid rgb(255, 94, 1);
-  background-color: rgb(188, 70, 2);
+  background-color: rgba(188, 70, 2, 0.526);
   padding: 3px 6px;
   border-radius: 5px;
   display: inline-block;
