@@ -1,112 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luciano Tessa - Portofolio</title>
-    <link rel="stylesheet" href="styles_dashboards.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body class="dark">
-    <header>
-      <h1><a href="/">Portfolio</a></h1>
-      <nav>
-        <a
-          class="cv"
-          href="img/CVLucianoTessa.pdf"
-          download="CVLucianoTessa.pdf"
-          >Descargar CV</a
-        >
-      </nav>
-    </header>
-    <main>
-      <h1>Comparación ventas de concesionaria 2023 vs 2024</h1>
-      <div class="iframe-container">
-        <video width="1500" height="900" controls>
-          <source src="vid/Dashboard1.mp4" type="video/mp4" />
-          Tu navegador no soporta el elemento de video.
-        </video>
-      </div>
-      <div class="text-container">
-        <h2>Dashboard Comparación ventas concesionaria 2023 vs 2024</h2>
-        <p>
-          Traigo un informe creado en Looker Studio y utilizando Google Sheets
-          sobre las ventas de una concesionaria de automóviles. Esta vez, para
-          crearlo, no extraje una base de datos desde Kaggle sino que generé
-          datos aleatorios en ChatGPT en base a atributos de columnas que le
-          proporcioné.
-        </p>
-        <p>
-          En el mismo me propuse hacer comparativas de datos del año 2023 con
-          datos del año 2024.
-        </p>
-        <p>
-          Contamos con datos como: ID, Agentes de ventas, fecha de ventas,
-          precio de ventas, estados de entregas, modelo, región, sucursal, tipo
-          de vehículo, ventas 2023 y ventas 2024.
-        </p>
-        <br />
-        <b><h2>Análisis</h2></b>
-        <p>
-          La concesionaria cuenta con un total de 248 ventas a lo largo de los
-          dos años, con 119 ventas concretadas en el año 2023 y 129 ventas en
-          2024.
-        </p>
-        <p>
-          Si nos centramos en el gráfico de serie temporal podemos llegar a la
-          conclusión de que varios meses del año 2024 están levemente por encima
-          del año anterior: Febrero, Mayo, Junio, Agosto, Septiembre, Octubre y
-          Diciembre. Mientras que en el año 2023, los meses que se destacan son:
-          Enero, Marzo y Noviembre.
-        </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luciano Tessa - Portofolio</title>
+  <link rel="stylesheet" href="styles_dashboards.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
+    rel="stylesheet" />
+</head>
 
-        <p>
-          Tendencias: Se puede notar un incremento de las ventas en general en
-          el mes de Noviembre, mientras que en el mes de Junio se sitúan la
-          menor cantidad de ventas de ambos años.
-        </p>
+<body class="dark">
+  <header>
+    <h1><a href="/">Portfolio</a></h1>
+    <nav>
+      <a class="cv" href="img/CVLucianoTessa.pdf" download="CVLucianoTessa.pdf">Descargar CV</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Comparación ventas de concesionaria 2023 vs 2024</h1>
+    <div class="iframe-container">
+      <video width="1500" height="900" controls>
+        <source src="vid/Dashboard1.mp4" type="video/mp4" />
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
+    <div class="text-container">
+      <h2>Dashboard Comparación ventas concesionaria 2023 vs 2024</h2>
+      <p>
+        <a style="color: aqua;"
+          href="https://docs.google.com/spreadsheets/d/1ys5VKcvAueW9foiskiMfjOc6bTEz3PuJ1vJwKxEIvds/edit?usp=sharing">Link
+          a la fuente de datos (Google Sheets)</a>
+      </p>
+      <p>
+        Traigo un informe creado en Looker Studio y utilizando Google Sheets
+        sobre las ventas de una concesionaria de automóviles. Esta vez, para
+        crearlo, no extraje una base de datos desde Kaggle sino que generé
+        datos aleatorios en ChatGPT en base a atributos de columnas que le
+        proporcioné.
+      </p>
+      <p>
+        En el mismo me propuse hacer comparativas de datos del año 2023 con
+        datos del año 2024.
+      </p>
+      <p>
+        Contamos con datos como: ID, Agentes de ventas, fecha de ventas,
+        precio de ventas, estados de entregas, modelo, región, sucursal, tipo
+        de vehículo, ventas 2023 y ventas 2024.
+      </p>
+      <br />
+      <b>
+        <h2>Análisis</h2>
+      </b>
+      <p>
+        La concesionaria cuenta con un total de 248 ventas a lo largo de los
+        dos años, con 119 ventas concretadas en el año 2023 y 129 ventas en
+        2024.
+      </p>
+      <p>
+        Si nos centramos en el gráfico de serie temporal podemos llegar a la
+        conclusión de que varios meses del año 2024 están levemente por encima
+        del año anterior: Febrero, Mayo, Junio, Agosto, Septiembre, Octubre y
+        Diciembre. Mientras que en el año 2023, los meses que se destacan son:
+        Enero, Marzo y Noviembre.
+      </p>
 
-        <p>
-          • Estado de entregas: En cuanto al estado de las entregas, se ve una
-          mejora sustancial en las entregas a tiempo: 56 en 2023 vs 67 en 2024.
-          Las entregas retrasadas se mantienen casi identicas pero con una
-          diferencia a favor de una unidad para el año 2024: 63 en 2023 y 62 en
-          2024.
-        </p>
+      <p>
+        Tendencias: Se puede notar un incremento de las ventas en general en
+        el mes de Noviembre, mientras que en el mes de Junio se sitúan la
+        menor cantidad de ventas de ambos años.
+      </p>
 
-        <p>
-          • Comparación de ventas por vehículo: La concesionaria cuenta con tres
-          tipos de vehículos: Sedán, Camioneta y Suv. La gran diferencia a favor
-          de 2024 se encuentran en las ventas de Sedanes (42 vs 50) y Suv (31 vs
-          35) mientras que en 2023 se vendió una unidad más de Camionetas (46 vs
-          45).
-        </p>
+      <p>
+        • Estado de entregas: En cuanto al estado de las entregas, se ve una
+        mejora sustancial en las entregas a tiempo: 56 en 2023 vs 67 en 2024.
+        Las entregas retrasadas se mantienen casi identicas pero con una
+        diferencia a favor de una unidad para el año 2024: 63 en 2023 y 62 en
+        2024.
+      </p>
 
-        <p>
-          • Comparación de ventas por región: Rosario es la que más ventas
-          generó en 2024 con un total de 39 ventas, teniendo una diferencia a
-          favor de 4 ventas, pero no es la que más diferencia tuvo respecto a
-          2023 como así la tuvo la región de Mendoza, con 32 ventas y una
-          diferencia a favor de 7 ventas respecto al año anterior. Los sigue la
-          región de Buenos Aires, con menos ventas (28) pero con una diferencia
-          anual similar a la de Rosario (4). Por último, Córdoba tuvo una baja
-          de las ventas respecto a 2023, con 30 ventas totales en el año 2024
-          pero una reducción de 5 respecto al períódo anterior.
-        </p>
-      </div>
-    </main>
+      <p>
+        • Comparación de ventas por vehículo: La concesionaria cuenta con tres
+        tipos de vehículos: Sedán, Camioneta y Suv. La gran diferencia a favor
+        de 2024 se encuentran en las ventas de Sedanes (42 vs 50) y Suv (31 vs
+        35) mientras que en 2023 se vendió una unidad más de Camionetas (46 vs
+        45).
+      </p>
 
-    <footer>
-      <div class="footer">
-        <p>&copy; 2024 Luciano Tessa</p>
-      </div>
-    </footer>
-    <script src="scripts.js"></script>
-  </body>
+      <p>
+        • Comparación de ventas por región: Rosario es la que más ventas
+        generó en 2024 con un total de 39 ventas, teniendo una diferencia a
+        favor de 4 ventas, pero no es la que más diferencia tuvo respecto a
+        2023 como así la tuvo la región de Mendoza, con 32 ventas y una
+        diferencia a favor de 7 ventas respecto al año anterior. Los sigue la
+        región de Buenos Aires, con menos ventas (28) pero con una diferencia
+        anual similar a la de Rosario (4). Por último, Córdoba tuvo una baja
+        de las ventas respecto a 2023, con 30 ventas totales en el año 2024
+        pero una reducción de 5 respecto al períódo anterior.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer">
+      <p>&copy; 2024 Luciano Tessa</p>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+
 </html>
