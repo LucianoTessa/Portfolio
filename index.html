@@ -17,6 +17,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
     rel="stylesheet" />
+
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+  </head>
 </head>
 
 <body class="dark">
@@ -215,7 +224,7 @@
               </a>
             </div>
             <div>
-              <a class="redes" href="https://x.com/LucianoTes80492" data-text="Twitter (X)">
+              <a class="redes" href="https://x.com/Lucho_Tessa" data-text="Twitter (X)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="#7155b9"
                   viewBox="0 0 1200 1227">
                   <path fill="#7155b9"
@@ -245,10 +254,9 @@
           </p>
           <br />
           <p>
-            Mediante SQL, Excel y Google Sheets me gusta recolectar datos,
-            trabajarlos y moldearlos a través de Looker Studio o Power BI para
-            así crear gráficos y presentaciones que ayuden a leer e
-            interpretar fácilmente estos mismos.
+            Me gusta recolectar datos, limpiarlos y transformarlos con Python y Pandas, dejándolos listos para su
+            análisis. Luego, utilizo herramientas como Looker Studio o Power BI para visualizar la información de manera
+            efectiva, creando gráficos y presentaciones que faciliten la interpretación y comprensión de los datos.
           </p>
         </div>
       </section>
@@ -257,19 +265,16 @@
         <h2>Tecnologías</h2>
         <div class="container_tecnologies">
           <div class="logo-item">
-            <span class="tooltip">HTML5</span>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" width="50"
-              height="50" />
+            <span class="tooltip">Python</span>
+            <img src="img/python-svgrepo-com.svg" width="50" height="50" />
           </div>
           <div class="logo-item">
-            <span class="tooltip">CSS3</span>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" width="50"
-              height="50" />
+            <span class="tooltip">Pandas</span>
+            <img src="img/icons8-pandas.svg" width="50" height="50" />
           </div>
           <div class="logo-item">
-            <span class="tooltip">C</span>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" width="50"
-              height="50" />
+            <span class="tooltip">MatplotLib</span>
+            <img src="img/matplotlib.png" width="50" height="50" />
           </div>
           <div class="logo-item">
             <span class="tooltip">SQL</span>
@@ -302,6 +307,31 @@
     <section class="projects-container" id="projects">
       <h2>Proyectos</h2>
       <div class="grid-container">
+        <!-- python/pandas 1 -->
+        <div class="grid-item" style="background-color: var(grid-container)">
+          <div class="media-container">
+            <img class="imagen_grid" src="img/python/pandas1.jpg" alt="Dashboard Image" />
+            <a href="/pandas1.html">
+            </a>
+          </div>
+          <div class="tecnologies_uses">
+            <h3 class="info_python/pandas1">Accidentes aéreos en Argentina</h3>
+            <div class="tecnologies-container">
+              <p class="python">Python</p>
+              <p class="pandas">Pandas</p>
+              <p class="matplotlib">Matplotlib</p>
+            </div>
+          </div>
+          <p class="info">
+            Tablero interactivo acerca de los incidentes aéreos ocurridos en
+            Argentina ocurridos durante los años 1994 y 2023.
+          </p>
+          <div class="buttons-container">
+            <a class="ver_informe" href="/pandas1.html">Ver informe</a>
+            <a class="ir_web" href="https://lookerstudio.google.com/s/hxfgTaOQjhs">Ir a la web</a>
+          </div>
+        </div>
+        <!-- Proyecto 1 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard1.jpg" alt="Dashboard Image" />
@@ -326,7 +356,7 @@
             <a class="ir_web" href="https://lookerstudio.google.com/s/pHIN9uI_hXo">Ir a la web</a>
           </div>
         </div>
-
+        <!-- Proyecto 2 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard2.jpg" alt="Dashboard Image" />
@@ -351,12 +381,12 @@
             <a class="ver_informe" href="/dashboard-2.html">Ver informe</a>
           </div>
         </div>
-
+        <!-- Proyecto 3 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard3.jpg" alt="Dashboard Image" />
             <a href="/dashboard-3.html">
-              <video id="dashboard-3" class="video_grid" src="vid/Dashboard-3.mp4" muted autoplay loop
+              <video id=" dashboard-3" class="video_grid" src="vid/Dashboard-3.mp4" muted autoplay loop
                 playsinline></video>
             </a>
           </div>
@@ -376,7 +406,7 @@
             <a class="ir_web" href="https://lookerstudio.google.com/s/u0to_rPGAo8">Ir a la web</a>
           </div>
         </div>
-
+        <!-- Proyecto 4 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard4.jpg" alt="Dashboard Image" />
@@ -388,7 +418,7 @@
           <div class="tecnologies_uses">
             <h3 class="info_dashboard4">Comparación ventas 2023 - 2024</h3>
             <div class="tecnologies-container">
-              <p class="powerBI">Power BI</p>
+              <p class="powerBI ">Power BI</p>
               <p class="SQL">SQL</p>
               <p class="basedatos">Base de datos</p>
               <p class="DAX">DAX</p>
@@ -402,7 +432,7 @@
             <a class="ver_informe" href="/dashboard-4.html">Ver informe</a>
           </div>
         </div>
-
+        <!-- Proyecto 5 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard5.jpg" alt="Dashboard Image" />
@@ -428,7 +458,7 @@
             <a class="ir_web" href="https://lookerstudio.google.com/s/kLg8IaltjRk">Ir a la web</a>
           </div>
         </div>
-
+        <!-- Proyecto 6 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard6.jpg" alt="Dashboard Image" />
@@ -440,9 +470,8 @@
           <div class="tecnologies_uses">
             <h3 class="info_dashboard6">Comparación hospitales regionales</h3>
             <div class="tecnologies-container">
-              <p class="powerBI">Power BI</p>
               <p class="DAX">DAX</p>
-              <p class="SQL">sql</p>
+              <p class="SQL">SQL</p>
             </div>
           </div>
           <p class="info">
@@ -453,7 +482,7 @@
             <a class="ver_informe" href="/dashboard-6.html">Ver informe</a>
           </div>
         </div>
-
+        <!-- Proyecto 7 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard7.jpg" alt="Dashboard Image" />
@@ -479,7 +508,7 @@
             <a class="ir_web" href="https://lookerstudio.google.com/s/iEuoAh2HZpM">Ir a la web</a>
           </div>
         </div>
-
+        <!-- Proyecto 8 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard8.jpg" alt="Dashboard Image" />
@@ -505,7 +534,7 @@
             <a class="ir_web" href="https://lookerstudio.google.com/s/reWmm0nMKzI">Ir a la web</a>
           </div>
         </div>
-
+        <!-- Proyecto 9 -->
         <div class="grid-item" style="background-color: var(grid-container)">
           <div class="media-container">
             <img class="imagen_grid" src="img/Dashboard9.jpg" alt="Dashboard Image" />
@@ -530,14 +559,13 @@
             <a class="ir_web" href="https://lookerstudio.google.com/s/hxfgTaOQjhs">Ir a la web</a>
           </div>
         </div>
-
       </div>
     </section>
   </main>
 
   <footer>
     <div class="footer">
-      <p>&copy; 2024 Luciano Tessa</p>
+      <p>&copy; 2025 Luciano Tessa</p>
     </div>
   </footer>
   <script src="scripts.js"></script>

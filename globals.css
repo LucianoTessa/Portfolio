@@ -3,9 +3,10 @@
 :root {
   --color-primario: rgb(113, 85, 185);
   --nav-color: rgb(129, 119, 156);
-  --background: rgb(255, 255, 255);
+  --background-gradient: radial-gradient(circle, #dabcfc, #ffffff);
   --text-color: rgb(29, 26, 32);
   --text-button: rgb(255, 255, 255);
+  --text-color2: rgb(255, 255, 255);
   --mode-button: rgb(204, 204, 204);
   --container-tecnologies: rgb(255, 255, 255);
   --grid-container: rgb(255, 255, 255);
@@ -17,9 +18,10 @@
 .dark {
   --color-primario: rgb(113, 85, 185);
   --nav-color: rgb(22, 13, 41);
-  --background: rgb(37, 33, 41);
+  --background-gradient: radial-gradient(circle, #6d4c83, #0f031d);
   --text-color: rgb(255, 255, 255);
   --text-button: rgb(255, 255, 255);
+  --text-color2: rgb(255, 255, 255);
   --mode-button: rgb(44, 42, 49);
   --container-tecnologies: rgb(113, 85, 185);
   --grid-container: rgb(51, 42, 59);
@@ -38,13 +40,13 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Afacad Flux", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--background);
+  background: var(--background-gradient);
   color: var(--text-color);
   overflow-x: hidden;
 }

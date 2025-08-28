@@ -146,7 +146,10 @@
 }
 
 .about_I {
-  min-height: 50vh;
+  max-width: 800px; /* ajustá este valor al ancho de la barra de tecnologías */
+  margin: 0 auto; /* centra el bloque en la página */
+  text-align: justify; /* opcional: justifica el texto para que se vea prolijo */
+  padding: 20px;
 }
 
 .about_I h2 {
@@ -164,7 +167,7 @@
 }
 
 .about_I .text-container p {
-  font-family: "Quicksand", serif;
+  font-family: "Montserrat", sans-serif !important;
   font-size: 20px;
   margin: 0;
   line-height: 1.5;
@@ -224,6 +227,7 @@
 }
 
 .tecnologies {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -374,14 +378,14 @@
 }
 
 .info_dashboard1 {
-  font-family: "DM Sans", serif;
+  font-family: "Montserrat", sans-serif !important;
   font-size: 21px !important;
   margin-top: 10px;
   color: var(--text-color);
 }
 
 .info_dashboard2 {
-  font-family: "DM Sans", serif;
+  font-family: "Montserrat", sans-serif !important;
   font-size: 20px !important;
   margin-top: 10px;
   color: var(--text-color);
@@ -511,7 +515,43 @@
   display: block;
 }
 
-.powerBI{
+.python {
+  position: relative;
+  top: 5px;
+  border: 2px solid rgb(0, 38, 255);
+  background-color: rgb(123, 130, 190);
+  color: var(--text-color2);
+  padding: 3px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  color: var(--text-color);
+}
+
+.pandas {
+  position: relative;
+  top: 5px;
+  border: 2px solid rgb(0, 153, 255);
+  background-color: rgb(115, 168, 209);
+  color: var(--text-color2);
+  padding: 3px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  color: var(--text-color);
+}
+
+.matplotlib {
+  position: relative;
+  top: 5px;
+  border: 2px solid rgb(0, 255, 255);
+  background-color: rgb(121, 180, 174);
+  color: var(--text-color2);
+  padding: 3px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  color: var(--text-color);
+}
+
+.powerBI {
   position: relative;
   top: 5px;
   border: 2px solid rgb(255, 238, 0);
@@ -522,44 +562,49 @@
   color: var(--text-color);
 }
 
-.SQL{
+.powerBI p {
+  color: var(--text-color2);
+}
+
+.SQL {
   position: relative;
   top: 5px;
   border: 2px solid rgb(255, 94, 1);
   background-color: rgba(188, 70, 2, 0.526);
+  color: var(--text-color2);
   padding: 3px 6px;
   border-radius: 5px;
   display: inline-block;
   color: var(--text-color);
 }
 
-.Access{
+.Access {
   position: relative;
   top: 5px;
-  border: 2px solid rgb(255, 255, 255);
-  background-color: rgba(255, 0, 21, 0.679);
+  border: 2px solid rgb(255, 0, 0);
+  background-color: rgb(206, 111, 119);
   padding: 3px 6px;
   border-radius: 5px;
   display: inline-block;
   color: var(--text-color);
 }
 
-.DAX{
+.DAX {
   position: relative;
   top: 5px;
   border: 2px solid rgb(255, 242, 1);
-  background-color: rgba(4, 1, 0, 0.268);
+  background-color: rgb(168, 160, 157);
   padding: 3px 6px;
   border-radius: 5px;
   display: inline-block;
   color: var(--text-color);
 }
 
-.basedatos{
+.basedatos {
   position: relative;
   top: 5px;
   border: 2px solid rgb(0, 51, 255);
-  background-color: rgba(3, 26, 130, 0.526);
+  background-color: rgba(69, 84, 153, 0.526);
   padding: 3px 6px;
   border-radius: 5px;
   display: inline-block;
@@ -785,6 +830,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: justify;
   }
 
   .about_I .text-container {
@@ -927,7 +973,7 @@
     margin-right: 0px;
     color: var(--text-color);
   }
-  
+
   .info_dashboard7 {
     font-family: "DM Sans", serif;
     font-size: 20px !important;
