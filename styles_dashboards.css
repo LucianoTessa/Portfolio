@@ -83,9 +83,38 @@ iframe {
 }
 
 .explicacion {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+pre code {
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 15px;
+  display: block;
+  overflow-x: auto;
+  background-color: #ffffff; /* fondo oscuro */
+  color: #ffffff; /* texto blanco */
+  border-radius: 10px;
+  padding: 15px;
+  display: block;
+}
+
+.hljs {
+  background: #353535 !important; /* color oscuro */
+  color: #ffffff; /* texto claro */
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.hljs .pd {
+  color: #61dafb;
+  font-weight: bold;
+}
+.hljs .sns {
+  color: #ff69b4;
+  font-weight: bold;
 }

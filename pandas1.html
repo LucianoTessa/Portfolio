@@ -11,6 +11,24 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
         rel="stylesheet" />
+
+    <!-- Prism.js CSS (tema oscuro) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
+    <!-- Prism.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+
+    <style>
+        /* Opcional: estilo uniforme para todos los bloques de código */
+        pre[class*="language-"] {
+            border-radius: 10px;
+            padding: 15px;
+            overflow-x: auto;
+            background: #1e1e1e;
+            /* Fondo tipo IDE oscuro */
+        }
+    </style>
 </head>
 
 <body class="dark">
@@ -21,7 +39,6 @@
         </nav>
     </header>
     <main>
-        <h1></h1>
         <div class="text-container">
             <h1>Análisis de ventas de autos usados</h1>
             <div class="tecnologias-usadas">
@@ -35,103 +52,141 @@
                     <img src="img/matplotlib.png" width="150" height="150" />
                 </div>
             </div>
+
             <h2>Objetivos</h2>
             <div class="objetivos">
                 <p>
                     Limpiar datos nulos, descubrir y arreglar inconsistencias de precios, borrar tablas innecesarias y
-                    dejar el
-                    dataset listo para su uso en Power BI.
+                    dejar el dataset listo para su uso en Power BI.
                 </p>
             </div>
 
             <h2>Carga, limpieza y modelado</h2>
             <div class="explicacion">
-                <img src="img/imagenes-pandas/imagen1.jpg" alt="">
+
+                <pre><code class="language-python">
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import kagglehub
+
+# Descargar dataset desde Kaggle
+path = kagglehub.dataset_download("austinreese/craigslist-carstrucks-data")
+df = pd.read_csv(path + "/vehicles.csv")
+                </code></pre>
                 <p>
                     Se importan las librerías principales que se usarán para análisis de datos y visualización.
-                    <br>
-                    <br>Utilizo pandas para la manipulación y análisis de datos y
-                    matplotlib.pyplot y seaborn para crear gráficos y visualizaciones.
-                    <br>
-                    <br>
-                    Descargo el conjunto de datos directamente desde Kaggle usando la librería kagglehub.
-                    <br>
-                    <br>
-                    Cargo el archivo CSV del dataset en un DataFrame de pandas
+                    <br><br>Utilizo pandas para la manipulación y análisis de datos y matplotlib.pyplot y seaborn para
+                    crear gráficos y visualizaciones.
+                    <br><br>Descargo el conjunto de datos directamente desde Kaggle usando la librería kagglehub.
+                    <br><br>Cargo el archivo CSV del dataset en un DataFrame de pandas.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen2.jpg" alt="">
+
+                <pre><code class="language-python">
+nulls = df.isnull().sum().sort_values(ascending=False)
+print(nulls)
+                </code></pre>
                 <p>
                     Identifico las columnas con valores nulos y cuento cuántos hay en cada una.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen3.jpg" alt="">
+
+                <pre><code class="language-python">
+nulls_percent = (df.isnull().sum() / len(df)) * 100
+print(nulls_percent.sort_values(ascending=False))
+                </code></pre>
                 <p>
                     Calculé el porcentaje de datos faltantes por columna. Esto me permitió priorizar la limpieza de
                     las columnas con mayor porcentaje de nulos.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen4.jpg" alt="">
+
+                <pre><code class="language-python">
+df = df.drop(columns=["county", "size", "cylinders", "VIN", "drive"])
+                </code></pre>
                 <p>
                     Eliminé las columnas que contenían más de 40% de datos nulos.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen5.jpg" alt="">
+
+                <pre><code class="language-python">
+df = df.fillna("unknown")
+df = df[~df.isin(["unknown"]).any(axis=1)]
+                </code></pre>
                 <p>
                     Reemplazé los datos nulos restantes por "unknown". Se pueden hacer análisis con datos desconocidos
-                    pero no con
-                    nulos.
+                    pero no con nulos.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen6.jpg" alt="">
+
+                <pre><code class="language-python">
+plt.figure(figsize=(15,7))
+sns.countplot(data=df, x="manufacturer", order=df["manufacturer"].value_counts().index)
+plt.xticks(rotation=60)
+plt.title("Cantidad de autos por fabricante")
+plt.show()
+                </code></pre>
                 <p>
                     Con matplotlib y seaborn elaboré diferentes gráficos para detectar errores de manera más sencilla.
-                    En este caso anteriormente los números eran el doble, pero al borrar todos los datos nulos, la
-                    cantidad bajó significativamente.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen7.jpg" alt="">
+
+                <pre><code class="language-python">
+plt.figure(figsize = (10,5))
+sns.histplot(df["price"], bins=50, kde=True)
+plt.title("Distribución de precios")
+plt.xlabel("precio")
+plt.show()
+                </code></pre>
                 <p>
-                    Al realizar este gráfico noté que el resutlado no era normal. La alta escala daba a entender que en
+                    Al realizar este gráfico noté que el resultado no era normal. La alta escala daba a entender que en
                     el dataset habían precios estratosféricos los cuales había que borrar.
                 </p>
-                <img src="img/imagenes-pandas/imagen14.jpg" alt="">
-                Al ver que entre el rango de
-                140.000/150.000 solamente habían seis automóviles, decidí borrar todas las filas con precios
-                mayores a 150.000.
-
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen8.jpg" alt="">
+
+                <pre><code class="language-python">
+cantidad = df[df['price'] == 150000].shape[0]
+print(cantidad)
+                </code></pre>
+                <p>
+                    Al ver que entre el rango de 140.000/150.000 solamente habían seis automóviles, decidí borrar todas
+                    las filas con precios mayores a 150.000.
+                </p>
+                <hr class="linea-fina">
+
+                <pre><code class="language-python">
+df_filtered = df[(df['price'] > 500) & (df['price'] < 150000)]
+plt.figure(figsize = (10,5))
+sns.histplot(df_filtered['price'], bins=50, kde=True)
+plt.title("Distribución de precios")
+plt.xlabel("Precio")
+plt.show()
+                </code></pre>
                 <p>
                     Ahora tengo un gráfico de distribución de precios con buenas proporciones.
                 </p>
                 <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen9.jpg" alt="">
-                <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets
-                </p>
-                <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen10.jpg" alt="">
-                <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets
-                </p>
-                <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen11.jpg" alt="">
-                <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets
-                </p>
-                <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen12.jpg" alt="">
-                <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets
-                </p>
-                <hr class="linea-fina">
-                <img src="img/imagenes-pandas/imagen13.jpg" alt="">
-                <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets
-                </p>
-            </div>
 
+                <pre><code class="language-python">
+df.drop(df[df['price'] > 150000].index, inplace=True)
+                </code></pre>
+                <p>
+                    Traigo un informe creado en Looker Studio y utilizando Google Sheets.
+                </p>
+                <hr class="linea-fina">
+
+                <pre><code class="language-python">
+plt.figure(figsize=(10,6))
+sns.scatterplot(data=df, x='year', y='price', alpha=0.5)
+plt.title('Precio vs Año')
+plt.show()
+                </code></pre>
+                <p>
+                    Traigo un informe creado en Looker Studio y utilizando Google Sheets.
+                </p>
+
+            </div>
         </div>
     </main>
 
