@@ -39,6 +39,7 @@ iframe {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  margin-top: 200px;
   font-size: 50px;
 }
 
@@ -117,4 +118,59 @@ pre code {
 .hljs .sns {
   color: #ff69b4;
   font-weight: bold;
+}
+
+pre[class*="language-"] {
+  border-radius: 10px;
+  padding: 15px;
+  background: #242424;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  pre[class*="language-"] {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+main img {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logos dentro de tecnologias-usadas */
+.tecnologias-usadas img {
+  max-width: 120px; /* tamaño máximo en escritorio */
+  width: 100%; /* se ajustan al contenedor */
+  height: auto; /* mantienen proporción */
+  margin: 10px;
+}
+
+/* En pantallas chicas (ej: celular) */
+@media (max-width: 600px) {
+  .tecnologias-usadas img {
+    max-width: 80px; /* más chicos en móvil */
+  }
+}
+
+.text-container h1 h2 {
+  font-size: clamp(
+    1.5rem,
+    5vw,
+    3rem
+  ); /* tamaño mínimo 1.5rem, máximo 3rem, escala con el viewport */
+  text-align: center; /* opcional, centra el título */
+  line-height: 1.2;
 }

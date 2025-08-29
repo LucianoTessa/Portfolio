@@ -11,22 +11,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
         rel="stylesheet" />
-
-    <!-- Prism.js CSS (tema oscuro) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-
-    <!-- Prism.js JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
-
     <style>
-        /* Opcional: estilo uniforme para todos los bloques de código */
         pre[class*="language-"] {
             border-radius: 10px;
             padding: 15px;
             overflow-x: auto;
-            background: #1e1e1e;
-            /* Fondo tipo IDE oscuro */
+            background: #242424;
+
         }
     </style>
 </head>
@@ -43,13 +37,13 @@
             <h1>Análisis de ventas de autos usados</h1>
             <div class="tecnologias-usadas">
                 <div class="logo-item">
-                    <img src="img/python-svgrepo-com.svg" width="150" height="150" />
+                    <img src="img/python-svgrepo-com.svg" />
                 </div>
                 <div class="logo-item">
-                    <img src="img/icons8-pandas.svg" width="150" height="150" />
+                    <img src="img/icons8-pandas.svg" />
                 </div>
                 <div class="logo-item">
-                    <img src="img/matplotlib.png" width="150" height="150" />
+                    <img src="img/matplotlib.png" />
                 </div>
             </div>
 
@@ -75,8 +69,8 @@ path = kagglehub.dataset_download("austinreese/craigslist-carstrucks-data")
 df = pd.read_csv(path + "/vehicles.csv")
                 </code></pre>
                 <p>
-                    Se importan las librerías principales que se usarán para análisis de datos y visualización.
-                    <br><br>Utilizo pandas para la manipulación y análisis de datos y matplotlib.pyplot y seaborn para
+                    Importé las librerías principales que usé para análisis de los datos y su visualización.
+                    <br><br>Utilicé pandas para la manipulación y análisis de datos y matplotlib.pyplot y seaborn para
                     crear gráficos y visualizaciones.
                     <br><br>Descargo el conjunto de datos directamente desde Kaggle usando la librería kagglehub.
                     <br><br>Cargo el archivo CSV del dataset en un DataFrame de pandas.
@@ -127,6 +121,7 @@ plt.xticks(rotation=60)
 plt.title("Cantidad de autos por fabricante")
 plt.show()
                 </code></pre>
+                <img src="img/imagenes-pandas/cantAutos.jpg" alt="" width="900" height="500">
                 <p>
                     Con matplotlib y seaborn elaboré diferentes gráficos para detectar errores de manera más sencilla.
                 </p>
@@ -139,6 +134,7 @@ plt.title("Distribución de precios")
 plt.xlabel("precio")
 plt.show()
                 </code></pre>
+                <img src="img/imagenes-pandas/grafico-error.jpg" alt="" width="900" height="500">
                 <p>
                     Al realizar este gráfico noté que el resultado no era normal. La alta escala daba a entender que en
                     el dataset habían precios estratosféricos los cuales había que borrar.
@@ -149,9 +145,13 @@ plt.show()
 cantidad = df[df['price'] == 150000].shape[0]
 print(cantidad)
                 </code></pre>
+                <pre><code class="language-python">
+df.drop(df[df['price'] > 150000].index, inplace=True)
+                </code></pre>
                 <p>
-                    Al ver que entre el rango de 140.000/150.000 solamente habían seis automóviles, decidí borrar todas
-                    las filas con precios mayores a 150.000.
+                    Al ver que entre el rango de 140.000/150.000 solamente habían seis automóviles (primera imagen),
+                    decidí borrar todas
+                    las filas con precios mayores a 150.000. (segunda imagen)
                 </p>
                 <hr class="linea-fina">
 
@@ -163,29 +163,79 @@ plt.title("Distribución de precios")
 plt.xlabel("Precio")
 plt.show()
                 </code></pre>
+                <img src="img/imagenes-pandas/distribucion.jpg" alt="" width="900" height="500">
                 <p>
                     Ahora tengo un gráfico de distribución de precios con buenas proporciones.
                 </p>
                 <hr class="linea-fina">
-
                 <pre><code class="language-python">
-df.drop(df[df['price'] > 150000].index, inplace=True)
+plt.figure(figsize=(14,6))
+sns.boxplot(data=df, x='manufacturer', y='price', showfliers=True)
+plt.xticks(rotation=75)
+plt.title('Distribución de precios por fabricante')
+plt.show()
                 </code></pre>
+                <img src="img/imagenes-pandas/outliers.jpg" alt="">
                 <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets.
+                    Creé un gráfico de cuartiles que abarca fabricantes y precios. La idea fue detectar outliers en los
+                    precios más alejados de los cuartiles 1 y 3. En la imagen se pueden ver outliers en precios muy
+                    bajos e irrealistas, en el rango de $0 a $3000.
                 </p>
                 <hr class="linea-fina">
+                <pre><code class="language-python">
+def eliminar_precios_bajos(grupo):
+    limite_inferior = grupo['price'].quantile(0.05)
+    return grupo[grupo['price'] >= limite_inferior]
 
+df = df.groupby('manufacturer', group_keys=False).apply(eliminar_precios_bajos)
+
+print(df)
+                </code></pre>
+                <p>
+                    Los outliers por encima del tercer cuartil no son un problema, ya que demuestran precios altos para
+                    determinados modelos de determinadas marcas, lo cual es totalmente normal y posible. Para
+                    solucionar el problema los outliers de bajo monto los cuales seguramente sean errores, recurrí a
+                    borrar el percentil 5 de cada fabricante.
+                </p>
+                <hr class="linea-fina">
+                <pre><code class="language-python">
+def eliminar_precios_bajos(grupo):
+    limite_inferior = grupo['price'].quantile(0.05)
+    return grupo[grupo['price'] >= limite_inferior]
+
+df = df.groupby('manufacturer', group_keys=False).apply(eliminar_precios_bajos)
+
+print(df)
+                </code></pre>
+                <img src="img/imagenes-pandas/outliers-arreglado.jpg" alt="">
+                <p>
+                    Con el percentil 5 borrado en cada fabricante, el gráfico ahora tiene más sentido y me demuestra que
+                    ya no hay precios extremadamente bajos los cuales suponían un error en el dataset.
+                </p>
+                <hr class="linea-fina">
                 <pre><code class="language-python">
 plt.figure(figsize=(10,6))
 sns.scatterplot(data=df, x='year', y='price', alpha=0.5)
 plt.title('Precio vs Año')
 plt.show()
                 </code></pre>
+                <img src="img/imagenes-pandas/dispersión.jpg" alt="">
                 <p>
-                    Traigo un informe creado en Looker Studio y utilizando Google Sheets.
+                    Creé un gráfico de dispersión para ver si había valores fuera de escala, sea en precios como en años
+                    pero a simple vista no se detecta ningún error que pueda suponer años o precios incoherentes.
                 </p>
-
+                <hr class="linea-fina">
+                <p>
+                    Luego del trabajo de limpieza, el dataset ya no cuenta datos nulos y columnas que no aportaban
+                    valor.
+                    Tampoco tiene precios irrealistas los cuales más adelante hubiesen generados errores al momento de
+                    generar visualizaciones.
+                </p>
+                <p>
+                    <br>
+                    El dataset ya está listo para ser importado en un software de visualización de datos para poder
+                    analizar más en detalle lo que sea requerido.
+                </p>
             </div>
         </div>
     </main>

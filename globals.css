@@ -75,13 +75,15 @@ header {
   align-items: center;
   gap: 5%;
   box-shadow: 3px 1px 5px rgb(17, 17, 17);
-  padding: 0px 25px;
   backdrop-filter: blur(10px);
-  position: sticky;
+  position: fixed; /* <- cambia sticky por fixed */
   top: 0;
+  left: 0;
+  width: 100%; /* <- que ocupe toda la pantalla */
   z-index: 1000;
   height: 10vh;
   padding: 0 10%;
+  background: rgba(65, 31, 83, 0.534); /* color para no quedar transparente */
 }
 
 header nav a {
