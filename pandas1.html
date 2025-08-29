@@ -14,12 +14,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+    <!-- Estilo para el resaltado -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+
+    <!-- Script de highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <!-- Inicializar el resaltado -->
+    <script>hljs.highlightAll();</script>
     <style>
         pre[class*="language-"] {
             border-radius: 10px;
             padding: 15px;
             overflow-x: auto;
-            background: #242424;
+            background: #2b2a2a;
 
         }
     </style>
@@ -39,10 +48,10 @@
                 <div class="logo-item">
                     <img src="img/python-svgrepo-com.svg" />
                 </div>
-                <div class="logo-item">
+                <div class="logo-item pandas">
                     <img src="img/icons8-pandas.svg" />
                 </div>
-                <div class="logo-item">
+                <div class="logo-item matplotlib2">
                     <img src="img/matplotlib.png" />
                 </div>
             </div>
@@ -68,7 +77,7 @@ import kagglehub
 path = kagglehub.dataset_download("austinreese/craigslist-carstrucks-data")
 df = pd.read_csv(path + "/vehicles.csv")
                 </code></pre>
-                <p>
+                <p class="explicacion">
                     Importé las librerías principales que usé para análisis de los datos y su visualización.
                     <br><br>Utilicé pandas para la manipulación y análisis de datos y matplotlib.pyplot y seaborn para
                     crear gráficos y visualizaciones.
@@ -81,8 +90,9 @@ df = pd.read_csv(path + "/vehicles.csv")
 nulls = df.isnull().sum().sort_values(ascending=False)
 print(nulls)
                 </code></pre>
-                <p>
-                    Identifico las columnas con valores nulos y cuento cuántos hay en cada una.
+                <p class="explicacion">
+                    Sumo los valores nulos y los ordeno de mayor a menor para dentificar las columnas con estos valores
+                    nulos y cuentar cuántos hay en cada una.
                 </p>
                 <hr class="linea-fina">
 
@@ -90,7 +100,7 @@ print(nulls)
 nulls_percent = (df.isnull().sum() / len(df)) * 100
 print(nulls_percent.sort_values(ascending=False))
                 </code></pre>
-                <p>
+                <p class="explicacion">
                     Calculé el porcentaje de datos faltantes por columna. Esto me permitió priorizar la limpieza de
                     las columnas con mayor porcentaje de nulos.
                 </p>
@@ -99,8 +109,8 @@ print(nulls_percent.sort_values(ascending=False))
                 <pre><code class="language-python">
 df = df.drop(columns=["county", "size", "cylinders", "VIN", "drive"])
                 </code></pre>
-                <p>
-                    Eliminé las columnas que contenían más de 40% de datos nulos.
+                <p class="explicacion">
+                    Utilizando DROP eliminé las columnas que contenían más de 40% de datos nulos.
                 </p>
                 <hr class="linea-fina">
 
@@ -108,7 +118,7 @@ df = df.drop(columns=["county", "size", "cylinders", "VIN", "drive"])
 df = df.fillna("unknown")
 df = df[~df.isin(["unknown"]).any(axis=1)]
                 </code></pre>
-                <p>
+                <p class="explicacion">
                     Reemplazé los datos nulos restantes por "unknown". Se pueden hacer análisis con datos desconocidos
                     pero no con nulos.
                 </p>
@@ -122,7 +132,7 @@ plt.title("Cantidad de autos por fabricante")
 plt.show()
                 </code></pre>
                 <img src="img/imagenes-pandas/cantAutos.jpg" alt="" width="900" height="500">
-                <p>
+                <p class="explicacion">
                     Con matplotlib y seaborn elaboré diferentes gráficos para detectar errores de manera más sencilla.
                 </p>
                 <hr class="linea-fina">
@@ -135,7 +145,7 @@ plt.xlabel("precio")
 plt.show()
                 </code></pre>
                 <img src="img/imagenes-pandas/grafico-error.jpg" alt="" width="900" height="500">
-                <p>
+                <p class="explicacion">
                     Al realizar este gráfico noté que el resultado no era normal. La alta escala daba a entender que en
                     el dataset habían precios estratosféricos los cuales había que borrar.
                 </p>
@@ -148,7 +158,7 @@ print(cantidad)
                 <pre><code class="language-python">
 df.drop(df[df['price'] > 150000].index, inplace=True)
                 </code></pre>
-                <p>
+                <p class="explicacion">
                     Al ver que entre el rango de 140.000/150.000 solamente habían seis automóviles (primera imagen),
                     decidí borrar todas
                     las filas con precios mayores a 150.000. (segunda imagen)
@@ -164,7 +174,7 @@ plt.xlabel("Precio")
 plt.show()
                 </code></pre>
                 <img src="img/imagenes-pandas/distribucion.jpg" alt="" width="900" height="500">
-                <p>
+                <p class="explicacion">
                     Ahora tengo un gráfico de distribución de precios con buenas proporciones.
                 </p>
                 <hr class="linea-fina">
@@ -176,7 +186,7 @@ plt.title('Distribución de precios por fabricante')
 plt.show()
                 </code></pre>
                 <img src="img/imagenes-pandas/outliers.jpg" alt="">
-                <p>
+                <p class="explicacion">
                     Creé un gráfico de cuartiles que abarca fabricantes y precios. La idea fue detectar outliers en los
                     precios más alejados de los cuartiles 1 y 3. En la imagen se pueden ver outliers en precios muy
                     bajos e irrealistas, en el rango de $0 a $3000.
@@ -191,7 +201,7 @@ df = df.groupby('manufacturer', group_keys=False).apply(eliminar_precios_bajos)
 
 print(df)
                 </code></pre>
-                <p>
+                <p class="explicacion">
                     Los outliers por encima del tercer cuartil no son un problema, ya que demuestran precios altos para
                     determinados modelos de determinadas marcas, lo cual es totalmente normal y posible. Para
                     solucionar el problema los outliers de bajo monto los cuales seguramente sean errores, recurrí a
@@ -199,16 +209,14 @@ print(df)
                 </p>
                 <hr class="linea-fina">
                 <pre><code class="language-python">
-def eliminar_precios_bajos(grupo):
-    limite_inferior = grupo['price'].quantile(0.05)
-    return grupo[grupo['price'] >= limite_inferior]
-
-df = df.groupby('manufacturer', group_keys=False).apply(eliminar_precios_bajos)
-
-print(df)
+plt.figure(figsize=(14,6))
+sns.boxplot(data=df, x='manufacturer', y='price')
+plt.xticks(rotation=75)
+plt.title('Distribución de precios por fabricante')
+plt.show()
                 </code></pre>
                 <img src="img/imagenes-pandas/outliers-arreglado.jpg" alt="">
-                <p>
+                <p class="explicacion">
                     Con el percentil 5 borrado en cada fabricante, el gráfico ahora tiene más sentido y me demuestra que
                     ya no hay precios extremadamente bajos los cuales suponían un error en el dataset.
                 </p>
@@ -220,22 +228,21 @@ plt.title('Precio vs Año')
 plt.show()
                 </code></pre>
                 <img src="img/imagenes-pandas/dispersión.jpg" alt="">
-                <p>
+                <p class="explicacion">
                     Creé un gráfico de dispersión para ver si había valores fuera de escala, sea en precios como en años
                     pero a simple vista no se detecta ningún error que pueda suponer años o precios incoherentes.
                 </p>
                 <hr class="linea-fina">
-                <p>
+                <p class="explicacion">
                     Luego del trabajo de limpieza, el dataset ya no cuenta datos nulos y columnas que no aportaban
                     valor.
                     Tampoco tiene precios irrealistas los cuales más adelante hubiesen generados errores al momento de
                     generar visualizaciones.
                 </p>
+                <p class="explicacion"> <br>
+                    ✅ El dataset ya está listo para ser importado en un software de visualización de datos para poder
+                    analizar más en detalle lo que sea requerido.</p>
                 <p>
-                    <br>
-                    El dataset ya está listo para ser importado en un software de visualización de datos para poder
-                    analizar más en detalle lo que sea requerido.
-                </p>
             </div>
         </div>
     </main>

@@ -566,6 +566,10 @@
   color: var(--text-color2);
 }
 
+.info_python {
+  margin-top: 15px;
+}
+
 .SQL {
   position: relative;
   top: 5px;
@@ -804,7 +808,7 @@
     background-color: var(--color-primario);
     height: 36px;
     width: 130px;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 0vh 0vw;
     cursor: pointer;
     text-decoration: none;
@@ -1081,7 +1085,7 @@
     background-color: var(--color-primario);
     height: 36px;
     width: 130px;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 0vh 0vw;
     cursor: pointer;
     text-decoration: none;
@@ -1201,6 +1205,13 @@
     width: 40px;
     height: 40px;
     transition: 0.2s ease;
+  }
+
+  .info_python {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 21px !important;
+    margin-top: 10px;
+    color: var(--text-color);
   }
 
   @media (min-width: 761px) and (max-width: 1080px) {
