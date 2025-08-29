@@ -157,6 +157,11 @@ img {
   height: auto;
   display: block;
   margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+main {
+  padding-top: 120px;
 }
 
 main img {
