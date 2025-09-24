@@ -49,6 +49,7 @@ body {
   background: var(--background-gradient);
   color: var(--text-color);
   overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -135,6 +136,10 @@ nav button {
 
 .imagen_grid {
   margin-bottom: 0px;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
 nav a {
