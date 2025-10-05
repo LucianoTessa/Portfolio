@@ -28,7 +28,7 @@ button {
   --text-color: #000000; /* azul oscuro para texto principal */
   --text-button: #ffffff; /* texto de botones blanco */
   --text-color2: #1e40af; /* azul oscuro secundario */
-  --mode-button: #3b82f6; /* botones azul brillante */
+  --mode-button: #1e3a8a; /* botones azul brillante */
   --container-tecnologies: #f0f9ff; /* azul muy claro para contenedores */
   --grid-container: #dbeafe; /* azul suave para grids */
   --footer: #1e3a8a; /* footer azul oscuro */
@@ -225,6 +225,7 @@ nav button {
   height: 20px;
   margin-top: 12px;
   margin-left: 17px;
+  color: var(--text-button);
 }
 
 .footer {

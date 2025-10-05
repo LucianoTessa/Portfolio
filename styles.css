@@ -521,9 +521,9 @@
   background-color: rgb(123, 130, 190);
   color: var(--text-color2);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .pandas {
@@ -533,21 +533,21 @@
   background-color: rgb(115, 168, 209);
   color: var(--text-color2);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .matplotlib {
   position: relative;
   top: 5px;
   border: 2px solid rgb(0, 255, 255);
-  background-color: rgb(121, 180, 174);
+  background-color: rgb(70, 133, 126);
   color: var(--text-color2);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .powerBI {
@@ -556,17 +556,18 @@
   border: 2px solid rgb(255, 238, 0);
   background-color: rgba(214, 200, 0, 0.613);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .powerBI p {
-  color: var(--text-color2);
+  color: var(--tooltip-text);
 }
 
 .info_python {
   margin-top: 15px;
+  color: var(--text-color);
 }
 
 .SQL {
@@ -576,9 +577,9 @@
   background-color: rgba(188, 70, 2, 0.526);
   color: var(--text-color2);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .Access {
@@ -587,9 +588,9 @@
   border: 2px solid rgb(255, 0, 0);
   background-color: rgb(206, 111, 119);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .DAX {
@@ -598,9 +599,9 @@
   border: 2px solid rgb(255, 242, 1);
   background-color: rgb(168, 160, 157);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .basedatos {
@@ -609,31 +610,31 @@
   border: 2px solid rgb(0, 51, 255);
   background-color: rgba(69, 84, 153, 0.526);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 30px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .looker_studio {
   position: relative;
   top: 5px;
   border: 2px solid rgb(0, 153, 255);
-  background-color: rgba(0, 153, 255, 0.349);
+  background-color: rgb(62, 121, 160);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .gsheets {
   position: relative;
   top: 5px;
   border: 2px solid rgb(27, 161, 38);
-  background-color: rgba(27, 161, 38, 0.356);
+  background-color: rgb(26, 95, 31);
   padding: 3px 6px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: inline-block;
-  color: var(--text-color);
+  color: var(--tooltip-text);
 }
 
 .info {
@@ -657,7 +658,7 @@
   text-decoration: none;
   color: white;
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 20px;
   text-align: center;
   display: inline-block;
   font-size: 14px; /* Tamaño de fuente ajustable */
