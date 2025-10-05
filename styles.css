@@ -256,7 +256,7 @@
   align-items: center;
   margin: 30px auto;
   color: white;
-  box-shadow: 1px 1px 10px 3px rgb(92, 92, 92);
+  box-shadow: 1px 1px 10px 2px var(--grid-shadow);
   border-radius: 10px;
 }
 
@@ -653,6 +653,7 @@
 .ver_informe {
   width: auto; /* Ajusta automáticamente el tamaño según el contenido */
   background-color: var(--color-primario);
+  color: var(--text-button);
   text-decoration: none;
   color: white;
   padding: 8px 16px;
@@ -660,6 +661,16 @@
   text-align: center;
   display: inline-block;
   font-size: 14px; /* Tamaño de fuente ajustable */
+}
+
+.ver_informe:hover {
+  background-color: #3b82f6;
+  color: var(--text-button);
+}
+
+.ir_web:hover {
+  background-color: #3b82f6;
+  color: var(--text-button);
 }
 
 .images_redes svg path {

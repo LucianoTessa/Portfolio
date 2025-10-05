@@ -25,7 +25,7 @@ button {
   --color-primario: #1e3a8a; /* azul intenso */
   --nav-color: #3b82f6; /* azul brillante */
   --background-gradient: linear-gradient(135deg, #ffffff, #ffffff, #f8f7ff);
-  --text-color: #0f172a; /* azul oscuro para texto principal */
+  --text-color: #000000; /* azul oscuro para texto principal */
   --text-button: #ffffff; /* texto de botones blanco */
   --text-color2: #1e40af; /* azul oscuro secundario */
   --mode-button: #3b82f6; /* botones azul brillante */
@@ -34,13 +34,13 @@ button {
   --footer: #1e3a8a; /* footer azul oscuro */
   --tooltip: #2563eb; /* tooltip azul intermedio */
   --tooltip-text: #ffffff; /* texto de tooltip blanco */
-  --grid-shadow: rgba(30, 58, 138, 0.3); /* sombra azul suave */
+  --grid-shadow: rgb(71, 71, 71); /* sombra azul suave */
 }
 
 .dark {
-  --color-primario: #1e40af; /* azul oscuro principal */
+  --color-primario: #1e3a8a; /* azul oscuro principal */
   --nav-color: #1e3a8a; /* azul marino */
-  --background-gradient: linear-gradient(135deg, #0c0a27, #343379, #7d72e0);
+  --background-gradient: linear-gradient(135deg, #0c0a27, #343379, #c2bee7);
   --text-color: #e0f2fe; /* texto azul muy claro */
   --text-button: #ffffff; /* texto de botones blanco */
   --text-color2: #93c5fd; /* azul claro secundario */
@@ -50,7 +50,7 @@ button {
   --footer: #1e3a8a; /* footer azul marino */
   --tooltip: #3b82f6; /* tooltip azul brillante */
   --tooltip-text: #ffffff; /* texto de tooltip blanco */
-  --grid-shadow: rgba(0, 0, 128, 0.5); /* sombra azul oscuro */
+  --grid-shadow: rgba(0, 0, 0, 0.5); /* sombra azul oscuro */
 }
 
 html {
@@ -135,7 +135,7 @@ header nav a:hover {
 h1 a {
   text-decoration: none;
   font-size: 2.5rem;
-  color: #fff !important;
+  color: var(--text-color);
   font-family: "Montserrat", sans-serif !important; /* <-- asegura Montserrat */
 }
 
@@ -156,7 +156,7 @@ nav {
 }
 
 nav ul li a {
-  color: #fff !important;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.5rem;
 }
@@ -195,7 +195,7 @@ nav button {
 }
 
 .cv:hover {
-  background-color: rgb(15, 0, 151);
+  background-color: #3b82f6;
   color: var(--text-button);
 }
 
@@ -216,8 +216,8 @@ nav button {
 }
 
 .mode:hover {
-  filter: brightness(2);
-  --mode-button: rgb(77, 77, 77);
+  background-color: #3b82f6;
+  color: var(--text-button);
 }
 
 .mode1 {
