@@ -18,7 +18,7 @@
 .dark {
   --color-primario: rgb(113, 85, 185);
   --nav-color: rgb(22, 13, 41);
-  --background-gradient: radial-gradient(circle, #6d4c83, #0f031d);
+  --background-gradient: radial-gradient(circle, #8848b3, #240349);
   --text-color: rgb(255, 255, 255);
   --text-button: rgb(255, 255, 255);
   --text-color2: rgb(255, 255, 255);
@@ -87,7 +87,12 @@ header {
   background: rgba(65, 31, 83, 0.534); /* color para no quedar transparente */
 }
 
-header nav a {
+.header h1 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #fff !important;
+}
+
+header nav {
   color: var(--color-primario);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -100,7 +105,8 @@ header nav a:hover {
 h1 a {
   text-decoration: none;
   font-size: 2.5rem;
-  color: var(--text-color);
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 nav ul {
@@ -120,9 +126,9 @@ nav {
 }
 
 nav ul li a {
+  color: #fff !important;
   text-decoration: none;
   font-size: 1.5rem;
-  color: var(--text-color);
 }
 
 nav button {
@@ -142,12 +148,12 @@ nav button {
   font-family: "Montserrat", sans-serif;
 }
 
-nav a {
-  text-decoration: none;
-}
-
 .nav_mobile {
   display: none;
+}
+
+.info_nav {
+  color: var(--text-color2);
 }
 
 .cv {
