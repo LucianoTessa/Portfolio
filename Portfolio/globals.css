@@ -1,10 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
 
+/* Forzar Montserrat en todo el proyecto */
+*,
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,
+nav,
+header,
+footer,
+button {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 :root {
   --color-primario: rgb(113, 85, 185);
-  --background: rgb(255, 255, 255);
+  --nav-color: rgb(129, 119, 156);
+  --background-gradient: radial-gradient(circle, #dabcfc, #ffffff);
   --text-color: rgb(29, 26, 32);
   --text-button: rgb(255, 255, 255);
+  --text-color2: rgb(255, 255, 255);
   --mode-button: rgb(204, 204, 204);
   --container-tecnologies: rgb(255, 255, 255);
   --grid-container: rgb(255, 255, 255);
@@ -15,9 +38,11 @@
 }
 .dark {
   --color-primario: rgb(113, 85, 185);
-  --background: rgb(37, 33, 41);
-  --text-color: white;
+  --nav-color: rgb(22, 13, 41);
+  --background-gradient: radial-gradient(circle, #8848b3, #240349);
+  --text-color: rgb(255, 255, 255);
   --text-button: rgb(255, 255, 255);
+  --text-color2: rgb(255, 255, 255);
   --mode-button: rgb(44, 42, 49);
   --container-tecnologies: rgb(113, 85, 185);
   --grid-container: rgb(51, 42, 59);
@@ -36,15 +61,25 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Afacad Flux", sans-serif;
+  font-family: "Montserrat", sans-serif !important; /* <-- fuerza Montserrat globalmente */
 }
 
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--background);
+  background: var(--background-gradient);
   color: var(--text-color);
   overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -71,16 +106,23 @@ header {
   align-items: center;
   gap: 5%;
   box-shadow: 3px 1px 5px rgb(17, 17, 17);
-  padding: 0px 25px;
   backdrop-filter: blur(10px);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   height: 10vh;
   padding: 0 10%;
+  background: rgba(65, 31, 83, 0.534);
 }
 
-header nav a {
+.header h1 {
+  font-family: "Montserrat", sans-serif !important; /* <-- asegura Montserrat */
+  color: #fff !important;
+}
+
+header nav {
   color: var(--color-primario);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -93,7 +135,8 @@ header nav a:hover {
 h1 a {
   text-decoration: none;
   font-size: 2.5rem;
-  color: var(--text-color);
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important; /* <-- asegura Montserrat */
 }
 
 nav ul {
@@ -113,9 +156,9 @@ nav {
 }
 
 nav ul li a {
+  color: #fff !important;
   text-decoration: none;
   font-size: 1.5rem;
-  color: var(--text-color);
 }
 
 nav button {
@@ -127,12 +170,16 @@ nav button {
   text-decoration: none;
 }
 
-nav a {
-  text-decoration: none;
+.imagen_grid {
+  margin-bottom: 0px;
 }
 
 .nav_mobile {
   display: none;
+}
+
+.info_nav {
+  color: var(--text-color2);
 }
 
 .cv {
@@ -141,7 +188,7 @@ nav a {
   font-size: 1.5rem;
   background-color: var(--color-primario);
   padding: 1vh 2vw;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -180,14 +227,23 @@ nav a {
   margin-left: 17px;
 }
 
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  box-shadow: 3px -3px 5px rgb(17, 17, 17);
+}
+
 @media (max-width: 760px) {
   body {
     font-size: 14px;
   }
-
   h1 a {
     text-decoration: none;
     font-size: 2.5rem;
     color: var(--text-color);
+    font-family: "Montserrat", sans-serif !important; /* <-- asegura Montserrat en mobile */
   }
 }

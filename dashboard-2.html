@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles_dashboards.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
     href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
     rel="stylesheet" />
 </head>
@@ -28,43 +28,106 @@
     <div class="iframe-container">
       <img src="img/Dashboard2.jpg" alt="">
     </div>
-    <div class="text-container">
+    <style>
+      body {
+        font-family: 'Afacad Flux', sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
 
-      <p>
-        Dashboard de las ventas de Contoso Corporation (empresa ficticia creada por Microsoft) que provee Microsoft
-        desde una base de datos en Access.
-      </p>
-      <h2>Análisis</h2>
-      <br>
-      <p>
-        Se pueden observar las ventas entre los años 2007 y 2009, entre los inicios y finales de la crisis financiera
-        mundial del año 2008.
-      </p>
-      <p>
-        Hay un total de 4.78 mil millones de euros de ganancia a lo largo de los tres años y 306 tiendas a lo largo del
-        mundo.
-      </p>
-      <p>
-        El gráfico de líneas muestra claramente como en 2007, antes del inicio de la crisis, se encuentra el punto
-        máximo de ventas, y como durante y después de la crisis, las ventas decrecieron significativamente hasta un 19%.
-      </p>
+      .container {
+        width: 90%;
+        /* ocupa casi todo el ancho del viewport */
+        margin: 100px auto 40px auto;
+        /* deja espacio arriba (por el video) */
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
 
-      <p>
-        El informe cuenta con un gráfico de barras donde se puede divisar en monto de ventas la cantidad de ganancia
-        generada por cada producto, siendo estos aparatos de audio, cámaras y videograbadoras, teléfonos celulares,
-        computadoras, música, películas y libros y por último televisión y video.
-      </p>
+      .text-container {
+        background-color: #1e1e1e;
+        padding: 40px 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        max-width: 1200px;
+        /* ancho máximo del bloque */
+      }
 
-      <p>
-        Dos gráficos de anillos, uno que muestra el porcentaje de ganancia que generaron las tiendas especificado por
-        continente, Norte América, Europa y Asia. El segundo gráfico de anillo muestra el porcentaje medido en ganancias
-        de cada clase de producto categroizado por: Económico, Regular y Deluxe.
-      </p>
-      <p>
-        Por último, un gráfico de barras que muestra a todos los fabricantes de los distintos productos que vende
-        Contoso, junto con su porcentaje de participación en la generación de ganancias.
-      </p>
+      h2 {
+        color: #c395ff;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 1.05em;
+        text-align: justify;
+        /* texto más prolijo */
+      }
+
+      a {
+        color: #c395ff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #64399c;
+      }
+    </style>
+
+    <div class="container">
+      <div class="text-container">
+        <p>
+          Dashboard de las ventas de Contoso Corporation (empresa ficticia creada por Microsoft) que provee Microsoft
+          desde una base de datos en Access.
+        </p>
+
+        <h2>Análisis</h2>
+
+        <p>
+          Se pueden observar las ventas entre los años 2007 y 2009, entre los inicios y finales de la crisis financiera
+          mundial del año 2008.
+        </p>
+
+        <p>
+          Hay un total de 4.78 mil millones de euros de ganancia a lo largo de los tres años y 306 tiendas a lo largo
+          del
+          mundo.
+        </p>
+
+        <p>
+          El gráfico de líneas muestra claramente como en 2007, antes del inicio de la crisis, se encuentra el punto
+          máximo de ventas, y como durante y después de la crisis, las ventas decrecieron significativamente hasta un
+          19%.
+        </p>
+
+        <p>
+          El informe cuenta con un gráfico de barras donde se puede divisar en monto de ventas la cantidad de ganancia
+          generada por cada producto, siendo estos aparatos de audio, cámaras y videograbadoras, teléfonos celulares,
+          computadoras, música, películas y libros y por último televisión y video.
+        </p>
+
+        <p>
+          Dos gráficos de anillos, uno que muestra el porcentaje de ganancia que generaron las tiendas especificado por
+          continente, Norte América, Europa y Asia. El segundo gráfico de anillo muestra el porcentaje medido en
+          ganancias
+          de cada clase de producto categorizado por: Económico, Regular y Deluxe.
+        </p>
+
+        <p>
+          Por último, un gráfico de barras que muestra a todos los fabricantes de los distintos productos que vende
+          Contoso, junto con su porcentaje de participación en la generación de ganancias.
+        </p>
+      </div>
     </div>
+
   </main>
 
   <footer>

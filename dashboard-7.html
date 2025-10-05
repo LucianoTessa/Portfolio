@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles_dashboards.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
     href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
     rel="stylesheet" />
 </head>
@@ -28,38 +28,96 @@
     <div class="iframe-container">
       <img src="img/Dashboard7.jpg" width="1600" height="1800" alt="">
     </div>
-    <div class="text-container">
-      <h2>Dashboard top 100 canales de YouTube</h2>
-      <p>
-        Este tablero cuenta con parámetros como top 100 canales en base a
-        cantidad de suscriptores, nombre del canal, cantidad de visitas por
-        canal, cantidad de video subidos y país de origen.
-      </p>
-      <p>
-        Por parte de los filtros podemos encontrarnos filtros de usuarios,
-        ranking, suscriptores, subidos, país y visitas.
-      </p>
+    <style>
+      body {
+        font-family: 'Afacad Flux', sans-serif;
+        background-color: #121212;
+        /* fondo oscuro */
+        color: #e0e0e0;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
 
-      <p>
-        Mediante indicadores, gráficos de barras, mapa interactivo y gráfico
-        de suscriptores por cuartiles se puede comparar los datos de los
-        canales que se deseen.
-      </p>
+      .container {
+        width: 90%;
+        margin: 100px auto 40px auto;
+        /* espacio arriba del video */
+        display: flex;
+        justify-content: center;
+      }
 
-      <p>
-        Los indicadores muestran cantidad de suscriptores, vistas y videos
-        subidos sobre el total de los cien canales. El gráfico de cuartiles
-        usa los canales seleccionados para graficar los cuartiles sobre el
-        total de suscriptores de los mismos.
-      </p>
-      <p>
-        El gráfico de barras compara la cantidad de suscriptores sobre los
-        canales filtrados. Por último, el mapa interactivo permite visualizar
-        el país de origen de cada canal y la cantidad de canales por país.
-        También permite hacer un filtrado rápido por países al seleccionar el
-        país.
-      </p>
+      .text-container {
+        background-color: #1e1e1e;
+        padding: 40px 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        max-width: 1200px;
+      }
+
+      h2 {
+        color: #c395ff;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 1.05em;
+        text-align: justify;
+      }
+
+      a {
+        color: #c395ff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #64399c;
+      }
+    </style>
+
+    <div class="container">
+      <div class="text-container">
+        <h2>Dashboard Top 100 Canales de YouTube</h2>
+
+        <p>
+          Este tablero cuenta con parámetros como el top 100 de canales en base a la cantidad de suscriptores, nombre
+          del canal,
+          cantidad de visitas por canal, cantidad de videos subidos y país de origen.
+        </p>
+
+        <p>
+          En cuanto a los filtros disponibles, se incluyen: usuarios, ranking, suscriptores, videos subidos, país y
+          cantidad de
+          visitas.
+        </p>
+
+        <p>
+          A través de indicadores, gráficos de barras, un mapa interactivo y un gráfico de suscriptores por cuartiles,
+          es
+          posible comparar los datos de los canales seleccionados de manera visual y dinámica.
+        </p>
+
+        <p>
+          Los indicadores muestran la cantidad total de suscriptores, vistas y videos subidos sobre el total de los cien
+          canales. El gráfico de cuartiles utiliza los canales filtrados para representar la distribución de
+          suscriptores entre
+          los distintos rangos.
+        </p>
+
+        <p>
+          El gráfico de barras permite comparar la cantidad de suscriptores entre los canales filtrados. Finalmente, el
+          mapa
+          interactivo muestra el país de origen de cada canal, la cantidad de canales por país, y además permite filtrar
+          de
+          forma rápida haciendo clic sobre una región específica.
+        </p>
+      </div>
     </div>
+
   </main>
 
   <footer>

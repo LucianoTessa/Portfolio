@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles_dashboards.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
     href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
     rel="stylesheet" />
 </head>
@@ -31,81 +31,130 @@
         Tu navegador no soporta el elemento de video.
       </video>
     </div>
-    <div class="text-container">
-      <h2>Dashboard Ventas E-Commerce</h2>
-      <p>
-        <a style="color: aqua;"
-          href="https://docs.google.com/spreadsheets/d/1Oo83je2t0gf2GK7Umd4cBGziEILhlNf7lkvazf31xSs/edit?usp=sharing">Link
-          a la fuente de datos (Google Sheets)</a>
-      </p>
+    <style>
+      body {
+        font-family: 'Afacad Flux', sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
 
-      <p>
-        Traigo un informe sobre las ventas de una empresa de ventas
-        E-commerce.
-      </p>
+      .container {
+        width: 90%;
+        margin: 100px auto 40px auto;
+        /* deja espacio para el video arriba */
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
 
-      <p>
-        Las ventas abarcan desde el mes de Enero hasta el mes de Noviembre. El
-        total de ventas medido en moneda es de $756.207, con un total de 3660
-        ventas concretadas.
-      </p>
+      .text-container {
+        background-color: #1e1e1e;
+        padding: 40px 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        max-width: 1200px;
+      }
 
-      <p>
-        El informe cuenta con dos filtros, uno para elegir categorías y otro
-        para elegir fechas en rango de meses. También cuenta con distintos
-        tipos de gráficos tales como gráficos de barra para medir la suma
-        total de las ventas de cada producto medidas en moneda, para medir la
-        cantidad de pagos por medio de pago elegido, la cantidad de artículos
-        vendidos a lo largo del tiempo y un gráfico de torta donde se muestran
-        en porcentaje las ventas de todos los productos.
-      </p>
+      h2 {
+        color: #c395ff;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
 
-      <p>
-        <b>
-          <h2>Análisis</h2>
-        </b>
-      </p>
+      p {
+        margin-bottom: 15px;
+        font-size: 1.05em;
+        text-align: justify;
+      }
 
-      <p>
-        A simple vista podemos observar que la categoría de ropa lidera las
-        ventas en cuanto a dinero generado por ventas, con $115.198,
-        siguiendola la categoría de libros, hogar y cocina, deportes,
-        juguetes, productos de belleza y por último electrónica con la suma de
-        $100.291.
-      </p>
+      a {
+        color: #c395ff;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-      <p>
-        En cuanto a los medios de pago, el medio de pago más elegido es la
-        tarjeta de crédito, con 760 pagos, siguiéndolo UPI, tarjeta de débito,
-        transferencias banarias y por último el efectivo con la suma de 696
-        operaciones.
-      </p>
+      a:hover {
+        text-decoration: underline;
+        color: #64399c;
+      }
+    </style>
 
-      <p>
-        El porcentaje de ventas lo lidera la categoría de libros con un 15,3%,
-        lo sigue los juguetes con 14,5%, deportes con un 14,3%, hogar y cocina
-        con 14,2%, electrónica con 14%, ropa con 13,9% y por último belleza
-        con 13,8%.
-      </p>
+    <div class="container">
+      <div class="text-container">
+        <h2>Dashboard Ventas E-Commerce</h2>
 
-      <p>
-        La conclusión que podemos sacar es que aunque la categoría de ropa
-        lidere la cantidad de ventas, no es así con la cantidad de ingresos
-        que genera, siendo esta categoría la categoría de libros que se sitúa
-        segunda en ventas en cantidad de productos vendidos.
-      </p>
+        <p>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1Oo83je2t0gf2GK7Umd4cBGziEILhlNf7lkvazf31xSs/edit?usp=sharing">
+            Link a la fuente de datos (Google Sheets)
+          </a>
+        </p>
 
-      <p>
-        En cuanto a las tendencias de venta a lo largo de el período de tiempo
-        Enero-Noviembre, los meses con mayores ventas son el mes de Abril y
-        Octubre, ambos con 362 ventas, mientras que el mes donde merman la
-        actividad es Noviembre con 245 ventas. También es evidente la
-        tendencia de los clientes a preferir comprar con medios electrónicos
-        antes que medios tradicionales como el efectivo.
-      </p>
+        <p>
+          Traigo un informe sobre las ventas de una empresa de ventas E-commerce.
+        </p>
 
-      <p></p>
+        <p>
+          Las ventas abarcan desde el mes de Enero hasta el mes de Noviembre. El total de ventas medido en moneda es de
+          $756.207, con un total de 3660 ventas concretadas.
+        </p>
+
+        <p>
+          El informe cuenta con dos filtros, uno para elegir categorías y otro para elegir fechas en rango de meses.
+          También
+          cuenta con distintos tipos de gráficos tales como gráficos de barra para medir la suma total de las ventas de
+          cada
+          producto medidas en moneda, para medir la cantidad de pagos por medio de pago elegido, la cantidad de
+          artículos
+          vendidos a lo largo del tiempo y un gráfico de torta donde se muestran en porcentaje las ventas de todos los
+          productos.
+        </p>
+
+        <h2>Análisis</h2>
+
+        <p>
+          A simple vista podemos observar que la categoría de ropa lidera las ventas en cuanto a dinero generado por
+          ventas,
+          con $115.198, siguiéndola la categoría de libros, hogar y cocina, deportes, juguetes, productos de belleza y
+          por
+          último electrónica con la suma de $100.291.
+        </p>
+
+        <p>
+          En cuanto a los medios de pago, el medio de pago más elegido es la tarjeta de crédito, con 760 pagos,
+          siguiéndolo
+          UPI, tarjeta de débito, transferencias bancarias y por último el efectivo con la suma de 696 operaciones.
+        </p>
+
+        <p>
+          El porcentaje de ventas lo lidera la categoría de libros con un 15,3%, lo sigue los juguetes con 14,5%,
+          deportes
+          con un 14,3%, hogar y cocina con 14,2%, electrónica con 14%, ropa con 13,9% y por último belleza con 13,8%.
+        </p>
+
+        <p>
+          La conclusión que podemos sacar es que aunque la categoría de ropa lidere la cantidad de ventas, no es así con
+          la
+          cantidad de ingresos que genera, siendo esta categoría la categoría de libros que se sitúa segunda en ventas
+          en
+          cantidad de productos vendidos.
+        </p>
+
+        <p>
+          En cuanto a las tendencias de venta a lo largo del período de tiempo Enero–Noviembre, los meses con mayores
+          ventas
+          son el mes de Abril y Octubre, ambos con 362 ventas, mientras que el mes donde merman la actividad es
+          Noviembre
+          con 245 ventas. También es evidente la tendencia de los clientes a preferir comprar con medios electrónicos
+          antes
+          que medios tradicionales como el efectivo.
+        </p>
+      </div>
     </div>
+
   </main>
 
   <footer>

@@ -167,7 +167,6 @@
 }
 
 .about_I .text-container p {
-  font-family: "Montserrat", sans-serif !important;
   font-size: 20px;
   margin: 0;
   line-height: 1.5;
@@ -661,6 +660,10 @@
   text-align: center;
   display: inline-block;
   font-size: 14px; /* Tamaño de fuente ajustable */
+}
+
+.images_redes svg path {
+  color: var(--text-color) !important;
 }
 
 .ver_mas:hover {

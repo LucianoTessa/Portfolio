@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles_dashboards.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
     href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&display=swap"
     rel="stylesheet" />
 </head>
@@ -31,89 +31,134 @@
         Tu navegador no soporta el elemento de video.
       </video>
     </div>
-    <div class="text-container">
-      <h2>Dashboard Ventas E-Commerce internacional</h2>
-      <p>
-        <a style="color: aqua;"
-          href="https://docs.google.com/spreadsheets/d/1NfU1hUNpZOKDnhBfqFSbhTFZEbtpBXQdjaq70ZXd3Gg/edit?usp=sharing">Link
-          a la fuente de datos (Google Sheets)</a>
-      </p>
-      <p>
-        Nuevo informe acerca de las ventas de una empresa E-commerce que
-        realiza ventas internacionales. El mismo está elaborado con Looker
-        Studio y una base de datos extraída de Kaggle.com que moldeé en Google
-        Sheets.
-      </p>
+    <style>
+      body {
+        font-family: 'Afacad Flux', sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
 
-      <p>
-        El informe cuenta con datos como ID, precios de los productos,
-        llamadas de los clientes, rating dado por los clientes, género, método
-        de envío y bloques del almacén. También cuenta con diferentes filtros
-        como ID del cliente, género, almacén, modo de envío, llamadas y
-        rating.
-      </p>
-      <br />
-      <b>
+      .container {
+        width: 90%;
+        margin: 100px auto 40px auto;
+        /* espacio arriba del video */
+        display: flex;
+        justify-content: center;
+      }
+
+      .text-container {
+        background-color: #1e1e1e;
+        padding: 40px 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        max-width: 1200px;
+      }
+
+      h2 {
+        color: #c395ff;
+        ;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 1.05em;
+        text-align: justify;
+      }
+
+      a {
+        color: #c395ff;
+        ;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #64399c;
+      }
+    </style>
+
+    <div class="container">
+      <div class="text-container">
+        <h2>Dashboard Ventas E-Commerce internacional</h2>
+        <p>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1NfU1hUNpZOKDnhBfqFSbhTFZEbtpBXQdjaq70ZXd3Gg/edit?usp=sharing">
+            Link a la fuente de datos (Google Sheets)
+          </a>
+        </p>
+
+        <p>
+          Nuevo informe acerca de las ventas de una empresa E-commerce que realiza ventas internacionales. El mismo está
+          elaborado con Looker Studio y una base de datos extraída de Kaggle.com que moldeé en Google Sheets.
+        </p>
+
+        <p>
+          El informe cuenta con datos como ID, precios de los productos, llamadas de los clientes, rating dado por los
+          clientes, género, método de envío y bloques del almacén. También cuenta con diferentes filtros como ID del
+          cliente,
+          género, almacén, modo de envío, llamadas y rating.
+        </p>
+
         <h2>Análisis</h2>
-      </b>
-      <p>
-        Las ventas totales suman 3754 operaciones, el valor total de estas
-        ventas es de USD 738.320, el promedio del rating basado en la calidad
-        de las llamadas de atención al cliente es de 2,99 de un total de 5.
-      </p>
 
-      <p>• Cantidad de productos por bloque de almacén.</p>
-      <p>
-        El almacén está dividido en cinco bloques: A, B, C, D, E y F. En el
-        gráfico de barras se puede distinguir a simple vista que el almacén F
-        es el más utilizado, con 1249 productos almacenado ahí. Los demás
-        bloques son utilizados casi por igual, teniendo el bloque C 639
-        productos, el bloque B 623, el bloque A 622 y el bloque D 621
-        productos.
-      </p>
+        <p>
+          Las ventas totales suman 3754 operaciones, el valor total de estas ventas es de USD 738.320, y el promedio del
+          rating
+          basado en la calidad de las llamadas de atención al cliente es de 2,99 de un total de 5.
+        </p>
 
-      <p>• Modo de envío.</p>
-      <p>
-        Los tres métodos de envío existentes son por barco, avión y ruta. En
-        el gráfico de torta podemos apreciar como el método de envío más
-        utilizado es el barco, con un 67,9%, lo sigue el envío por aire con un
-        16,3% y por último por ruta con un 15,8%. Esto nos indica que es
-        probable la mayoría de los envíos sean internacionales ya que los dos
-        métodos de envío más utilizados son generalmente utilizados para ello.
-      </p>
+        <p><strong>• Cantidad de productos por bloque de almacén</strong></p>
+        <p>
+          El almacén está dividido en cinco bloques: A, B, C, D, E y F. En el gráfico de barras se puede distinguir a
+          simple
+          vista que el bloque F es el más utilizado, con 1249 productos almacenados. Los demás bloques son utilizados
+          casi por
+          igual: bloque C (639 productos), bloque B (623), bloque A (622) y bloque D (621).
+        </p>
 
-      <p>• Género del cliente.</p>
-      <p>
-        Mediante otro gráfico de torta podemos ver el porcentaje de género de
-        los clientes. Se mantiene una paridad al ser el 50.1% masculino y el
-        49,9% femenino.
-      </p>
+        <p><strong>• Modo de envío</strong></p>
+        <p>
+          Los tres métodos de envío existentes son por barco, avión y ruta. En el gráfico de torta se aprecia que el
+          método más
+          utilizado es el barco (67,9%), seguido por el envío aéreo (16,3%) y por ruta (15,8%). Esto sugiere que la
+          mayoría de
+          los envíos son internacionales, dado que los dos métodos predominantes se usan para largas distancias.
+        </p>
 
-      <p>
-        • Promedio de relación del costo del producto con las llamadas de
-        atención al cliente.
-      </p>
-      <p>
-        Con este promedio podemos concluir que a medida que más caro es el
-        producto, más llamadas de clientes se reciben. Esto puede deberse a la
-        importancia del producto o la preocupación del cliente sobre el estado
-        del envío. Hice un promedio ya que al ser una gran cantidad de datos
-        sería imposible mostrarlos todos en un gráfico de línea.
-      </p>
+        <p><strong>• Género del cliente</strong></p>
+        <p>
+          Otro gráfico de torta muestra el porcentaje de género de los clientes, manteniendo una paridad casi exacta:
+          50,1% masculino y 49,9% femenino.
+        </p>
 
-      <p>
-        • Distribución de rating dado por el cliente por llamadas a atención
-        al cliente.
-      </p>
-      <p>
-        En este gráfico de distribución permite observar si hay algún patrón
-        entre la cantidad de llamadas al servicio al cliente y el rating
-        otorgado por los clientes. Podemos visualizar que la media del rating
-        del cliente se ubica aproximadamente en 3 puntos, lo que nos indica
-        que el rating suele ser bueno o muy bueno. Estos tres puntos también
-        se condicen con entre tres y cuatro llamadas por cliente.
-      </p>
+        <p><strong>• Promedio de relación del costo del producto con las llamadas de atención al cliente</strong></p>
+        <p>
+          Se observa que, a medida que aumenta el precio de un producto, también lo hace la cantidad de llamadas
+          recibidas.
+          Esto puede deberse a la importancia del producto o a la preocupación del cliente respecto al envío. Se utilizó
+          un
+          promedio general debido a la gran cantidad de datos, que dificultaría su representación en un gráfico de
+          líneas.
+        </p>
+
+        <p><strong>• Distribución de rating dado por el cliente en relación con las llamadas a atención al
+            cliente</strong></p>
+        <p>
+          Este gráfico de distribución permite observar patrones entre la cantidad de llamadas al servicio al cliente y
+          el
+          rating otorgado. Se visualiza que la media del rating se ubica cerca de 3 puntos, lo cual indica una
+          valoración buena
+          o muy buena. Este valor promedio coincide con clientes que realizaron entre tres y cuatro llamadas.
+        </p>
+      </div>
     </div>
+
   </main>
 
   <footer>
