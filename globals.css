@@ -40,7 +40,7 @@ button {
 .dark {
   --color-primario: #1e3a8a; /* azul oscuro principal */
   --nav-color: #1e3a8a; /* azul marino */
-  --background-gradient: linear-gradient(135deg, #0c0a27, #343379, #c2bee7);
+  --background-gradient: linear-gradient(135deg, #161349, #343379, #c2bee7);
   --text-color: #e0f2fe; /* texto azul muy claro */
   --text-button: #ffffff; /* texto de botones blanco */
   --text-color2: #93c5fd; /* azul claro secundario */

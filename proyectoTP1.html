@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luciano Tessa - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="styles_dashboards.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body class="dark">
+    <header>
+        <h1><a href="/">Portfolio</a></h1>
+        <nav>
+            <a class="cv" href="https://drive.google.com/file/d/1yovGQMK3IU5TnonIaFYoUdrhB13DfWy5/view?usp=sharing"
+                download="CVLucianoTessa.pdf">Descargar CV</a>
+        </nav>
+    </header>
+    <main>
+        <div class="text-container">
+            <h1>TP Final – Análisis de Datos</h1>
+
+            <div class="tecnologias-usadas">
+                <div class="logo-item"><img src="img/python-svgrepo-com.svg" alt="Python" /></div>
+                <div class="logo-item pandas"><img src="img/icons8-pandas.svg" alt="pandas" /></div>
+                <div class="logo-item matplotlib2"><img src="img/matplotlib.png" alt="matplotlib" /></div>
+            </div>
+            <a href="https://github.com/LucianoTessa/TP-final-Analisis-de-Datos-UTN" target="_blank" class="repo">
+                Ver repositorio en GitHub
+            </a>
+
+
+            <h2>Objetivos</h2>
+            <div class="objetivos">
+                <p>
+                    Explorar y limpiar el dataset, analizar correlaciones, detectar inconsistencias y preparar los datos
+                    para visualización o modelado, siguiendo estrictamente lo que aparece en el archivo `.ipynb`.
+                </p>
+            </div>
+
+            <h2>Código y explicación</h2>
+            <div class="explicacion">
+
+                <!-- Celda 1 -->
+                <pre><code class="language-python">from ucimlrepo import fetch_ucirepo
+import pandas as pd
+
+student_data = fetch_ucirepo(id=320)</code></pre>
+                <p class="explicacion">
+                    Cargo el dataset en un DataFrame desde Kaggle usando la librería kagglehub y preparo las librerías
+                    de análisis.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 2 -->
+                <pre><code class="language-python">x = student_data.data.features
+y = student_data.data.targets</code></pre>
+                <p class="explicacion">
+                    Verifico la cantidad de valores nulos por columna para identificar qué datos faltan.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 3 -->
+                <pre><code class="language-python">df = x.copy()
+df['final_grade'] = y['G3']</code></pre>
+                <p class="explicacion">
+                    Calculo el porcentaje de nulos por columna para priorizar la limpieza de los datos.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 4 -->
+                <pre><code class="language-python">pd.set_option('display.max_rows', 10)
+pd.set_option('display.max_columns', None)
+display(df)</code></pre>
+                <p class="explicacion">
+                    Elimino columnas con alto porcentaje de datos nulos.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 5 -->
+                <pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns]</code></pre>
+                <p class="explicacion">
+                    Relleno valores nulos con "unknown" y elimino filas que todavía contengan "unknown" para limpieza
+                    total.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 6 -->
+                <pre><code class="language-python">print("Información general del DataFrame:")
+display(df.info())
+display(df.head())</code></pre>
+                <p class="explicacion">
+                    Gráfico de cantidad de autos por fabricante.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 7 -->
+                <pre><code class="language-python">print(df.isnull().sum())</code></pre>
+                <p class="explicacion">
+                    Visualizo la distribución de precios para detectar valores anómalos.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 8 -->
+                <pre><code class="language-python">variables = {
+    'age': 'Edad',
+    'Medu': 'Educación Madre',
+    'Fedu': 'Educación Padre',
+    'traveltime': 'Tiempo de viaje',
+    'studytime': 'Tiempo de estudio',
+    'failures': 'Materias reprobadas',
+    'famrel': 'Relación familiar',
+    'freetime': 'Tiempo libre',
+    'goout': 'Salidas con amigos',
+    'Dalc': 'Alcohol entre semana',
+    'Walc': 'Alcohol fin de semana',
+    'health': 'Salud',
+    'absences': 'Ausencias',
+    'final_grade': 'Nota final'
+}</code></pre>
+                <p class="explicacion">
+                    Identifico precios extremadamente altos y elimino filas con valores mayores a 150000.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 9 -->
+                <pre><code class="language-python">plt.figure(figsize=(18, 18))
+for i, var in enumerate(variables):
+    plt.subplot(5, 3, i+1)
+    sns.boxplot(x=df[var])
+    plt.title(f'Boxplot de {variables[var]}')
+plt.tight_layout()
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Distribución de precios después de limpiar valores extremos.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 10 -->
+                <pre><code class="language-python">plt.figure(figsize=(10, 4))
+sns.histplot(df['final_grade'], bins=20, kde=True)
+plt.title('Distribución de la Nota Final')
+plt.xlabel('Nota Final')
+plt.ylabel('Frecuencia')
+plt.show()
+
+plt.figure(figsize=(10, 4))
+sns.countplot(x='sex', data=df)
+plt.title('Distribución por Sexo')
+plt.show()
+
+plt.figure(figsize=(10, 4))
+sns.countplot(x='school', data=df)
+plt.title('Distribución por Escuela')
+plt.show()
+
+plt.figure(figsize=(10, 4))
+sns.countplot(x='internet', data=df)
+plt.title('Distribución de internet')
+plt.show()
+
+plt.figure(figsize=(10, 4))
+sns.countplot(x='traveltime', data=df)
+plt.title('Distribución de tiempo de viaje (1: <15 min, 2: 15–30 min, 3: 30–60 min, 4: >1 hora)')
+plt.show()
+
+plt.figure(figsize=(10, 4))
+sns.countplot(x='health', data=df)
+plt.title('Distribución de salud (1: muy malo, 5: muy bueno)')
+plt.show()
+
+plt.figure(figsize=(10, 4))
+sns.countplot(x='failures', data=df)
+plt.title('Distribución de materias reprobadas')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot para detectar outliers por fabricante.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 11 -->
+                <pre><code class="language-python">df['grupo_rendimiento'] = pd.cut(
+    df['final_grade'],
+    bins=[-1, 9, 14, 20],
+    labels=['Bajo', 'Medio', 'Alto']
+)</code></pre>
+                <p class="explicacion">
+                    Elimino los outliers de bajo monto por fabricante (percentil 5).
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 12 -->
+                <pre><code class="language-python">ausencias_por_grupo = df.groupby('grupo_rendimiento')['absences'].describe()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+
+                <!-- Celda 13 -->
+                <pre><code class="language-python">print("Resumen estadístico de ausencias por grupo de rendimiento:")
+display(ausencias_por_grupo)</code></pre>
+                <p class="explicacion">
+                    Gráfico de dispersión para verificar coherencia entre año y precio.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(8, 6))
+sns.boxplot(x='grupo_rendimiento', y='absences', data=df, order=['Bajo', 'Medio', 'Alto'])
+plt.title('Ausencias escolares según grupo de rendimiento')
+plt.xlabel('Grupo de rendimiento')
+plt.ylabel('Cantidad de ausencias')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(8, 4))
+sns.barplot(x='grupo_rendimiento', y='absences', data=df, order=['Bajo', 'Medio', 'Alto'], estimator='mean')
+plt.title('Media de ausencias por grupo de rendimiento')
+plt.xlabel('Grupo de rendimiento')
+plt.ylabel('Media de ausencias')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(8, 6))
+sns.boxplot(x='studytime', y='final_grade', data=df)
+plt.title('Nota final según tiempo de estudio semanal')
+plt.xlabel('Tiempo de estudio semanal (1:<2h, 2:2-5h, 3:5-10h, 4:>10h)')
+plt.ylabel('Nota final')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(8, 6))
+sns.boxplot(x='Dalc', y='final_grade', data=df)
+plt.title('Nota final según consumo de alcohol entre semana')
+plt.xlabel('Consumo de alcohol entre semana (1: muy bajo, 5: muy alto)')
+plt.ylabel('Nota final')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(8, 5))
+sns.boxplot(x='traveltime', y='final_grade', data=df)
+plt.title('Nota final según tiempo de viaje hasta la escuela')
+plt.xlabel('Tiempo de viaje (1:<15min, 2:15-30min, 3:30-60min, 4:>1h)')
+plt.ylabel('Nota final')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(8, 5))
+sns.boxplot(x='goout', y='final_grade', data=df)
+plt.title('Nota final según frecuencia de salidas con amigos')
+plt.xlabel('Frecuencia de salidas con amigos (1: muy poco, 5: mucho)')
+plt.ylabel('Nota final')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <hr class="linea-fina">
+                <!-- Celda 12 -->
+                <pre><code class="language-python">plt.figure(figsize=(10, 6))
+sns.boxplot(x='Dalc', y='final_grade', hue='studytime', data=df)
+plt.title('Nota final según consumo de alcohol entre semana y tiempo de estudio')
+plt.xlabel('Consumo de alcohol entre semana (1: muy bajo, 5: muy alto)')
+plt.ylabel('Nota final')
+plt.legend(title='Tiempo de estudio (1:<2h, 2:2-5h, 3:5-10h, 4:>10h)')
+plt.show()</code></pre>
+                <p class="explicacion">
+                    Boxplot actualizado tras eliminación de outliers bajos.
+                </p>
+                <p class="explicacion">
+                    El dataset ahora está limpio y listo para análisis o exportación.
+                </p>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <p>&copy; 2025 Luciano Tessa</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -65,6 +65,10 @@ iframe {
   height: auto;
 }
 
+.logo-item {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 .linea-fina {
   margin-top: 25px;
   margin-bottom: 50px;
@@ -167,7 +171,6 @@ main {
 
 main img {
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .tecnologias-usadas {
@@ -185,7 +188,7 @@ main img {
 
 .tecnologias-usadas .logo-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgb(139, 25, 233);
+  box-shadow: 0 10px 20px rgb(82, 171, 255);
 }
 
 /* Logos dentro de tecnologias-usadas */
@@ -234,4 +237,17 @@ main img {
   ); /* tamaño mínimo 1.5rem, máximo 3rem, escala con el viewport */
   text-align: center; /* opcional, centra el título */
   line-height: 1.2;
+}
+
+.repo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* color inicial */
+  text-decoration: none; /* quitar subrayado */
+}
+
+.repo:hover {
+  color: #3b82f6; /* color al pasar el mouse */
+  cursor: pointer; /* cambia el cursor al pasar el mouse */
 }
